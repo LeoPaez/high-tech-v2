@@ -40,7 +40,7 @@ const BuildComponent = styled.div`
   flex-direction: column;
   gap: 4px;
 `
-const BuildComponentName = styled.p`
+const BuildComponentName = styled.label`
   color: #343a40;
   font-size: 14px;
   font-weight: 700;
@@ -96,8 +96,8 @@ const BuildPage = () => {
             <ProductInstallments>12 cuotas sin interes de ${buildInstallments}</ProductInstallments>
             <BuildComponents>
               <BuildComponent>
-                <BuildComponentName>Procesador</BuildComponentName>
-                <BuildComponentSelect name="selectedCpu" defaultValue="default">
+                <BuildComponentName htmlFor="cpu">Procesador</BuildComponentName>
+                <BuildComponentSelect id="cpu" name="selectedCpu" defaultValue="default">
                   <BuildComponentOption value="default" disabled>
                     Selecciona una opción
                   </BuildComponentOption>
@@ -106,8 +106,8 @@ const BuildPage = () => {
                 </BuildComponentSelect>
               </BuildComponent>
               <BuildComponent>
-                <BuildComponentName>Placa de Video</BuildComponentName>
-                <BuildComponentSelect name="selectedGpu" defaultValue="default">
+                <BuildComponentName htmlFor="gpu">Placa de Video</BuildComponentName>
+                <BuildComponentSelect id="gpu" name="selectedGpu" defaultValue="default">
                   <BuildComponentOption value="default" disabled>
                     Selecciona una opción
                   </BuildComponentOption>
@@ -116,16 +116,16 @@ const BuildPage = () => {
                 </BuildComponentSelect>
               </BuildComponent>
               <BuildComponent>
-                <BuildComponentName>Memoria Ram</BuildComponentName>
-                <BuildComponentSelect name="selectedRam" defaultValue="ram" disabled>
+                <BuildComponentName htmlFor="ram">Memoria Ram</BuildComponentName>
+                <BuildComponentSelect id="ram" name="selectedRam" defaultValue="ram" disabled>
                   <BuildComponentOption value="ram" disabled>
                   {build.components.ram}
                   </BuildComponentOption>
                 </BuildComponentSelect>
               </BuildComponent>
               <BuildComponent>
-                <BuildComponentName>Almacenamiento</BuildComponentName>
-                <BuildComponentSelect name="selectedStorage" defaultValue="default">
+                <BuildComponentName htmlFor="storage">Almacenamiento</BuildComponentName>
+                <BuildComponentSelect id="storage" name="selectedStorage" defaultValue="default">
                   <BuildComponentOption value="default" disabled>
                     Selecciona una opción
                   </BuildComponentOption>

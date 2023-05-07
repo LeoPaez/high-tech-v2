@@ -18,6 +18,7 @@ const CheckoutTitle = styled.h2`
 const Checkout = styled.div`
   display: flex;
   border-radius: 10px;
+  border: 2px solid #e9ecef;
 `
 const CheckoutDetails = styled.div`
   display: flex;
@@ -47,8 +48,12 @@ const CheckoutLabel = styled.label`
 `
 const CheckoutInput = styled.input`
   border: 2px solid #ced4da;
-  padding: 8px 60px 8px 8px;
+  padding: 10px 60px 10px 8px;
   border-radius: 4px;
+  :focus {
+    border: 2px solid #ff4800;
+    outline: none;
+  }
 `
 const CheckoutPaymentTitle = styled.h4`
   font-size: 18px;
@@ -66,6 +71,11 @@ const CheckoutPayments = styled.div`
     justify-content: center;
     cursor: pointer;
     border-radius: 6px;
+    border: 2px solid #dee2e6;
+    transition: all 0.3s ease 0s;
+    :hover {
+      background-color: #e9ecef;
+    }
   }
 
   img {
@@ -127,28 +137,28 @@ const CheckoutPage = () => {
           <CheckoutDetails>
             <CheckoutTitle>Detalles del pago</CheckoutTitle>
             <CheckoutForm>
-              <CheckoutLabel>Nombre y apellido</CheckoutLabel>
-              <CheckoutInput placeholder="Tu nombre y apellido" />
-              <CheckoutLabel>Correo</CheckoutLabel>
-              <CheckoutInput placeholder="Tu correo" />
+              <CheckoutLabel htmlFor="name">Nombre y apellido</CheckoutLabel>
+              <CheckoutInput type="text" id="name" placeholder="Tu nombre y apellido" />
+              <CheckoutLabel htmlFor="email">Correo</CheckoutLabel>
+              <CheckoutInput type="email" id="email" placeholder="Tu correo" />
               <CheckoutFlex>
                 <CheckoutFlex column>
-                  <CheckoutLabel>Dirección</CheckoutLabel>
-                  <CheckoutInput placeholder="Tu dirección" />
+                  <CheckoutLabel htmlFor="adress">Dirección</CheckoutLabel>
+                  <CheckoutInput type="text" id="adress" placeholder="Tu dirección" />
                 </CheckoutFlex>
                 <CheckoutFlex column>
-                  <CheckoutLabel>Ciudad</CheckoutLabel>
-                  <CheckoutInput placeholder="Ciudad" />
+                  <CheckoutLabel htmlFor="city">Ciudad</CheckoutLabel>
+                  <CheckoutInput type="text" id="city" placeholder="Ciudad" />
                 </CheckoutFlex>
               </CheckoutFlex>
               <CheckoutFlex>
                 <CheckoutFlex column>
-                  <CheckoutLabel>Pais</CheckoutLabel>
-                  <CheckoutInput placeholder="Pais" />
+                  <CheckoutLabel htmlFor="country">Pais</CheckoutLabel>
+                  <CheckoutInput type="text" id="country" placeholder="Pais" />
                 </CheckoutFlex>
                 <CheckoutFlex column>
-                  <CheckoutLabel>Codigo Postal</CheckoutLabel>
-                  <CheckoutInput placeholder="Codigo postal" />
+                  <CheckoutLabel htmlFor="postalCode">Codigo Postal</CheckoutLabel>
+                  <CheckoutInput type="text" id="postalCode" placeholder="Codigo postal" />
                 </CheckoutFlex>
               </CheckoutFlex>
             </CheckoutForm>
