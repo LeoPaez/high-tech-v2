@@ -46,11 +46,11 @@ const BuildComponentName = styled.p`
 ` 
 const BuildComponentSelect = styled.select`
   padding: 2px 0px 2px 6px;
-  /* background-color: transparent; */
+  background-color: #ced4da;
   border-radius: 4px;
   align-self: flex-start;
   border: 1px solid #adb5bd;
-  color: #343a40;
+  color: #0a0a0a;
   width: 60%;
   :focus {
     border: 1px solid #ff4800;
@@ -58,6 +58,7 @@ const BuildComponentSelect = styled.select`
   }
 `
 const BuildComponentOption = styled.option`
+  color: #0a0a0a;
 `
 
 const BuildPage = () => {
