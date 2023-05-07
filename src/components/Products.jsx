@@ -13,6 +13,7 @@ const ProductsCont = styled.div`
   background-color: #dee2e6;
   border-radius: 4px;
   padding-block: 30px;
+  width: 100%;
 `
 
 const Products = () => {
