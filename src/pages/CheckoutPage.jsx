@@ -2,9 +2,9 @@ import React from 'react'
 import styled from "styled-components"
 import CartProduct from "../components/CartMenu/CartProduct"
 import { MainButton } from "../components/Build"
-import MPLogo from "../assets/logos/mp-logo2.webp"
-import PaypalLogo from "../assets/logos/paypal-logo.png"
-import BtcLogo from "../assets/logos/btc-logo.png"
+import MPLogo from "../assets/img/logos/mp-logo2.webp"
+import PaypalLogo from "../assets/img/logos/paypal-logo.png"
+import BtcLogo from "../assets/img/logos/btc-logo.png"
 
 const CheckoutCont = styled.div`
   display: flex;

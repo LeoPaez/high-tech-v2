@@ -1,12 +1,10 @@
 import React from 'react'
 import styled from "styled-components"
-import Product from "../components/Product"
 import { MainButton } from "../components/Build"
-import MercadoPagoLogo from "../assets/logos/mp-logo.webp"
-import CheckIcon from "../assets/icons/check-icon.png"
-import ShieldIcon from "../assets/icons/shield-icon.png"
-import DeliveryIcon from "../assets/icons/delivery-icon.png"
-import { Title } from "../components/News"
+import MercadoPagoLogo from "../assets/img/logos/mp-logo.webp"
+import CheckIcon from "../assets/img/icons/check-icon.png"
+import ShieldIcon from "../assets/img/icons/shield-icon.png"
+import DeliveryIcon from "../assets/img/icons/delivery-icon.png"
 import { 
   ProductPageCont,
   ProductCont,

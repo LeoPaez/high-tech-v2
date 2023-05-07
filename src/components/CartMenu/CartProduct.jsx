@@ -66,7 +66,7 @@ const CartProduct = ({ img, title, price, id }) => {
     <>
       <ProductCont>
         <ProductLink to={`/producto/${id}`}>
-          <ProductImg src="/src/assets/products/processors/ryzen-9-5900x.webp" alt="asd" />
+          <ProductImg src="/src/assets/img/products/processors/ryzen-9-5900x.webp" alt="asd" />
         </ProductLink>
         <ProductInfo>
           <ProductLink to={`/producto/${id}`}>

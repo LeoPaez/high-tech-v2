@@ -1,15 +1,15 @@
 import React from 'react'
 import styled, { keyframes } from "styled-components"
-import Amd from "../assets/brands/amd-logo.png"
-import AsusRog from "../assets/brands/asus-rog-logo.png"
-import CoolerMaster from "../assets/brands/cooler-master-logo.png"
-import Corsair from "../assets/brands/corsair-logo.png"
-import Gigabyte from "../assets/brands/gigabyte-logo.png"
-import Gskill from "../assets/brands/gskill-logo.svg"
-import Intel from "../assets/brands/intel-logo.png"
-import Kingston from "../assets/brands/kingston-logo.png"
-import Nvidia from "../assets/brands/nvidia-logo.png"
-import WesternDigital from "../assets/brands/western-digital-logo.png"
+import Amd from "../assets/img/brands/amd-logo.png"
+import AsusRog from "../assets/img/brands/asus-rog-logo.png"
+import CoolerMaster from "../assets/img/brands/cooler-master-logo.png"
+import Corsair from "../assets/img/brands/corsair-logo.png"
+import Gigabyte from "../assets/img/brands/gigabyte-logo.png"
+import Gskill from "../assets/img/brands/gskill-logo.svg"
+import Intel from "../assets/img/brands/intel-logo.png"
+import Kingston from "../assets/img/brands/kingston-logo.png"
+import Nvidia from "../assets/img/brands/nvidia-logo.png"
+import WesternDigital from "../assets/img/brands/western-digital-logo.png"
 
 const scroll = keyframes`
   0% {
@@ -32,7 +32,7 @@ const SliderCont = styled.div`
   ${SlideTrack} {
     display: flex;
     animation: ${scroll} 40s linear infinite;
-    -webkit-animation: ${scroll} 40s linear infinite;
+    -img/-animation: ${scroll} 40s linear infinite;
     width: calc(200px * 20);
     gap: 120px;
     height: 200px;
