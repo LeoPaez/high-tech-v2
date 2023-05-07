@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from "styled-components"
-import PromoBanner1 from "../assets/img/banners/promo-banner1.webp"
-import PromoBanner2 from "../assets/img/banners/promo-banner2.webp"
-import PromoBanner3 from "../assets/img/banners/promo-banner3.webp"
-import PromoBanner4 from "../assets/img/banners/promo-banner4.webp"
-import PromoBanner5 from "../assets/img/banners/promo-banner5.webp"
+import PromoBanner1 from "/assets/img/banners/promo-banner1.webp"
+import PromoBanner2 from "/assets/img/banners/promo-banner2.webp"
+import PromoBanner3 from "/assets/img/banners/promo-banner3.webp"
+import PromoBanner4 from "/assets/img/banners/promo-banner4.webp"
+import PromoBanner5 from "/assets/img/banners/promo-banner5.webp"
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 

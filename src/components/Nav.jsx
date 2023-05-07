@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from "styled-components"
-import BlackLogo from "../assets/img/logos/hightech-logo-black.png"
-import UserIcon from "../assets/img/icons/user.png"
+import BlackLogo from "/assets/img/logos/hightech-logo-black.png"
+import UserIcon from "/assets/img/icons/user.png"
 import { MainButton } from "./Build"
 import { Link } from "react-router-dom"
 import BurgerMenu from "./BurgerMenu/BurgerMenu"

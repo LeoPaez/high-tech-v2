@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import CartIcon from "../../assets/img/icons/cart.png"
+import CartIcon from "/assets/img/icons/cart.png"
 import CartProduct from "./CartProduct";
 import { Cart, CartCount, LinkButton, NavIcon } from "../Nav";
 import { MyContext } from "../../context/Context";

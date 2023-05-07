@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from "styled-components"
-import SendIcon from "../assets/img/social/send.png"
-import Instagram from "../assets/img/social/instagram.png"
-import Twitter from "../assets/img/social/twitter.png"
-import YouTube from "../assets/img/social/youtube.png"
-import TikTok from "../assets/img/social/tiktok.png"
-import WhiteLogo from "../assets/img/logos/hightech-logo-white.png"
+import SendIcon from "/assets/img/social/send.png"
+import Instagram from "/assets/img/social/instagram.png"
+import Twitter from "/assets/img/social/twitter.png"
+import YouTube from "/assets/img/social/youtube.png"
+import TikTok from "/assets/img/social/tiktok.png"
+import WhiteLogo from "/assets/img/logos/hightech-logo-white.png"
 
 const FooterCont = styled.footer`
   display: flex;

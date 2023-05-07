@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from "styled-components"
-import CpuIcon from "../assets/img/icons/cpu-icon.png"
-import GpuIcon from "../assets/img/icons/gpu-icon.png"
-import RamIcon from "../assets/img/icons/ram-icon.png"
-import CoolingIcon from "../assets/img/icons/cooling-icon.png"
+import CpuIcon from "/assets/img/icons/cpu-icon.png"
+import GpuIcon from "/assets/img/icons/gpu-icon.png"
+import RamIcon from "/assets/img/icons/ram-icon.png"
+import CoolingIcon from "/assets/img/icons/cooling-icon.png"
 import { Link } from "react-router-dom"
 
 const BuildCard = styled.div`
