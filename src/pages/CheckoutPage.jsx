@@ -17,7 +17,6 @@ const CheckoutTitle = styled.h2`
 `
 const Checkout = styled.div`
   display: flex;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 10px;
 `
 const CheckoutDetails = styled.div`
@@ -43,9 +42,11 @@ const CheckoutFlex = styled.div`
 `
 const CheckoutLabel = styled.label`
   margin-bottom: -12px;
+  font-weight: 700;
+  color: #343a40;
 `
 const CheckoutInput = styled.input`
-  border: 1px solid grey;
+  border: 2px solid #ced4da;
   padding: 8px 60px 8px 8px;
   border-radius: 4px;
 `
@@ -65,7 +66,6 @@ const CheckoutPayments = styled.div`
     justify-content: center;
     cursor: pointer;
     border-radius: 6px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
   img {
@@ -81,7 +81,6 @@ const CheckoutPayments = styled.div`
   }
 
   input:checked + img {
-    transition: box-shadow 0.11s;
     border-bottom: 6px solid #ffb600;
   }
 `

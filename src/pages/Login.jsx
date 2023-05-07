@@ -18,9 +18,6 @@ export const Access = styled.div`
   padding: 20px 40px 30px;
   gap: 20px;
   border-radius: 8px;
-  box-shadow: 0px 2px 4px -2px rgba(0,0,0,0.5);
-  -webkit-box-shadow: 0px 2px 4px -2px rgba(0,0,0,0.5);
-  -moz-box-shadow: 0px 2px 4px -2px rgba(0,0,0,0.5);
 `
 export const AccessTitle = styled.h2`
   text-align: center;
@@ -58,7 +55,6 @@ export const AccessSubmit = styled.button`
   margin-top: 10px;
   cursor: pointer;
   letter-spacing: 0.1;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
   :hover {
     background-color: #ff6d00;

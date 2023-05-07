@@ -22,7 +22,6 @@ export const ProductCont = styled.div`
   display: flex;
   background-color: #dee2e6;
   border-radius: 6px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   gap: 20px;
 `
 export const ProductImgCont = styled.div`

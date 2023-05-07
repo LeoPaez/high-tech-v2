@@ -43,6 +43,7 @@ const BuildComponent = styled.div`
 const BuildComponentName = styled.p`
   color: #343a40;
   font-size: 14px;
+  font-weight: 700;
 ` 
 const BuildComponentSelect = styled.select`
   padding: 2px 0px 2px 6px;
@@ -51,7 +52,7 @@ const BuildComponentSelect = styled.select`
   align-self: flex-start;
   border: 1px solid #adb5bd;
   color: #0a0a0a;
-  width: 60%;
+  width: 66%;
   :focus {
     border: 1px solid #ff4800;
     outline: none;
