@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from "styled-components"
 import { MainButton } from "../components/Build"
-import MercadoPagoLogo from "../assets/img/logos/mp-logo.webp"
-import CheckIcon from "../assets/img/icons/check-icon.png"
-import ShieldIcon from "../assets/img/icons/shield-icon.png"
-import DeliveryIcon from "../assets/img/icons/delivery-icon.png"
+import MercadoPagoLogo from "/assets/img/logos/mp-logo.webp"
+import CheckIcon from "/assets/img/icons/check-icon.png"
+import ShieldIcon from "/assets/img/icons/shield-icon.png"
+import DeliveryIcon from "/assets/img/icons/delivery-icon.png"
 import { 
   ProductPageCont,
   ProductCont,
@@ -25,7 +25,6 @@ import {
   ProductDetailIcon,
 } from "../pages/ProductPage"
 import ProductCarousel from "../components/ProductCarousel"
-import { products } from "../data/Products"
 import { builds } from "../data/Builds"
 import { useParams } from "react-router-dom"
 import RecommendedProducts from "../components/RecommendedProducts"
