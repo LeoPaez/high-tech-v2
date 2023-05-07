@@ -98,44 +98,40 @@ const BuildPage = () => {
             <BuildComponents>
               <BuildComponent>
                 <BuildComponentName>Procesador</BuildComponentName>
-                <BuildComponentSelect name="select">
-                  <BuildComponentOption selected="true" disabled="disabled">
+                <BuildComponentSelect name="selectedCpu" defaultValue="default">
+                  <BuildComponentOption value="default" disabled>
                     Selecciona una opción
                   </BuildComponentOption>
-                  <BuildComponentOption>{build.components.cpu[0]}</BuildComponentOption>
-                  <BuildComponentOption>{build.components.cpu[1]}</BuildComponentOption>
+                  <BuildComponentOption value="cpuA">{build.components.cpu[0]}</BuildComponentOption>
+                  <BuildComponentOption value="cpuB">{build.components.cpu[1]}</BuildComponentOption>
                 </BuildComponentSelect>
               </BuildComponent>
               <BuildComponent>
                 <BuildComponentName>Placa de Video</BuildComponentName>
-                <BuildComponentSelect name="select">
-                  <BuildComponentOption selected="true" disabled="disabled">
+                <BuildComponentSelect name="selectedGpu" defaultValue="default">
+                  <BuildComponentOption value="default" disabled>
                     Selecciona una opción
                   </BuildComponentOption>
-                  <BuildComponentOption>{build.components.gpu[0]}</BuildComponentOption>
-                  <BuildComponentOption>{build.components.gpu[1]}</BuildComponentOption>
+                  <BuildComponentOption value="gpuA">{build.components.gpu[0]}</BuildComponentOption>
+                  <BuildComponentOption value="gpuB">{build.components.gpu[1]}</BuildComponentOption>
                 </BuildComponentSelect>
               </BuildComponent>
               <BuildComponent>
                 <BuildComponentName>Memoria Ram</BuildComponentName>
-                <BuildComponentSelect name="select" disabled>
-                  <BuildComponentOption selected="true" disabled="disabled">
+                <BuildComponentSelect name="selectedRam" defaultValue="ram" disabled>
+                  <BuildComponentOption value="ram" disabled>
                   {build.components.ram}
                   </BuildComponentOption>
                 </BuildComponentSelect>
               </BuildComponent>
               <BuildComponent>
                 <BuildComponentName>Almacenamiento</BuildComponentName>
-                <BuildComponentSelect name="select">
-                  <BuildComponentOption selected="true" disabled="disabled">
+                <BuildComponentSelect name="selectedStorage" defaultValue="default">
+                  <BuildComponentOption value="default" disabled>
                     Selecciona una opción
                   </BuildComponentOption>
-                  <BuildComponentOption>
-                    {build.components.storage[0]}
-                  </BuildComponentOption>
-                  <BuildComponentOption >
-                    {build.components.storage[1]}
-                  </BuildComponentOption>
+                  <BuildComponentOption value="storageA">{build.components.storage[0]}</BuildComponentOption>
+                  <BuildComponentOption value="storageB">{build.components.storage[1]}</BuildComponentOption>
                 </BuildComponentSelect>
               </BuildComponent>
             </BuildComponents>
