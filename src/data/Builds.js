@@ -1,7 +1,8 @@
 export const builds = [
+  //* Pc Starter
   {
     id: 1,
-    img: "/src/assets/pc-starter.webp",
+    img: "/assets/pc-starter.webp",
     name: "Starter",
     price: "399",
     category: "pc-armada",
@@ -21,9 +22,10 @@ export const builds = [
       },
     }
   },
+  //* Pc Pro
   {
     id: 2,
-    img: "/src/assets/pc-pro.webp",
+    img: "/assets/pc-pro.webp",
     name: "Pro",
     price: "599",
     category: "pc-armada",
@@ -43,9 +45,10 @@ export const builds = [
       },
     }
   },
+  //* Pc Premium
   {
     id: 3,
-    img: "/src/assets/pc-premium.webp",
+    img: "/assets/pc-premium.webp",
     name: "Premium",
     price: "899",
     category: "pc-armada",
