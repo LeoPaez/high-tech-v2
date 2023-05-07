@@ -1,7 +1,7 @@
 export const builds = [
   {
     id: 1,
-    img: "../src/assets/pc-starter.webp",
+    img: "/src/assets/pc-starter.webp",
     name: "Starter",
     price: "399",
     category: "pc-armada",
@@ -23,7 +23,7 @@ export const builds = [
   },
   {
     id: 2,
-    img: "../src/assets/pc-pro.webp",
+    img: "/src/assets/pc-pro.webp",
     name: "Pro",
     price: "599",
     category: "pc-armada",
@@ -45,7 +45,7 @@ export const builds = [
   },
   {
     id: 3,
-    img: "../src/assets/pc-premium.webp",
+    img: "/src/assets/pc-premium.webp",
     name: "Premium",
     price: "899",
     category: "pc-armada",
