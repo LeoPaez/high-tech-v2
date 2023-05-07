@@ -23,6 +23,7 @@ export const ProductCont = styled.div`
   background-color: #dee2e6;
   border-radius: 6px;
   gap: 20px;
+  border: 1px solid #ced4da;
 `
 export const ProductImgCont = styled.div`
   width: 500px;

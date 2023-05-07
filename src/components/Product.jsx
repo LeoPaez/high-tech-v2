@@ -12,6 +12,7 @@ const ProductCont = styled.div`
   padding: 16px;
   gap: 12px;
   border-radius: 6px;
+  border: 1px solid #dee2e6;
 `
 const ProductImg = styled.img`
   width: 160px;
