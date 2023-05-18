@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { MainButton } from "../components/Build"
 import { LinkButton } from "../components/Nav"
 
-const Error = styled.div`
+const ErrorCont = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,12 +24,13 @@ const ErrorText = styled.p`
   font-size: 20px;
   max-width: 460px;
   text-align: center;
+  margin-bottom: 20px;
 `
 
 const NotFoundPage = () => {
   return (
     <>
-      <Error>
+      <ErrorCont>
         <ErrorTitle>
           <span>¡</span>Upa<span>!</span> Parece que hubo un error<span>...</span>
         </ErrorTitle>
@@ -40,7 +41,7 @@ const NotFoundPage = () => {
         <LinkButton to="/">
           <MainButton center>Volver al Inicio</MainButton>
         </LinkButton>
-      </Error>
+      </ErrorCont>
     </>
   )
 }
