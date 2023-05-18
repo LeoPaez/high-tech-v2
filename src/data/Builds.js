@@ -3,7 +3,7 @@ export const builds = [
   {
     id: 1,
     img: "/assets/img/pc-starter.webp",
-    name: "Starter",
+    title: "Starter",
     price: "399",
     category: "pc-armada",
     cpu: "Intel Core i5 / Ryzen 5600",
@@ -26,7 +26,7 @@ export const builds = [
   {
     id: 2,
     img: "/assets/img/pc-pro.webp",
-    name: "Pro",
+    title: "Pro",
     price: "599",
     category: "pc-armada",
     cpu: "Intel Core i7 / Ryzen 5800",
@@ -49,7 +49,7 @@ export const builds = [
   {
     id: 3,
     img: "/assets/img/pc-premium.webp",
-    name: "Premium",
+    title: "Premium",
     price: "899",
     category: "pc-armada",
     cpu: "Intel Core i9 / Ryzen 5900",

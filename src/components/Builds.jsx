@@ -36,11 +36,11 @@ const Builds = () => {
         </BuildTitle>
         <BuildCards>
           {
-            builds.map((build, index) => 
+            builds.map((build) => 
               <Build 
-                key={index}
+                key={build.id}
                 src={build.img}
-                name={build.name}
+                title={build.title}
                 price={build.price}
                 cpu={build.cpu}
                 gpu={build.gpu}

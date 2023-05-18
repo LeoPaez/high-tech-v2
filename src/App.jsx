@@ -5,9 +5,9 @@ import Nav from "./components/Nav";
 import Slider from "./components/Slider";
 import Footer from "./components/Footer";
 import { Wrapper, Fixed } from "./pages/Home";
-
 import Home from "./pages/Home";
 import NotFoundPage from "./pages/NotFoundPage";
+import SuccessPage from "./pages/SuccessPage";
 const ProductPage = lazy(() => import("./pages/ProductPage"));
 const BuildPage = lazy(() => import("./pages/BuildPage"));
 const CheckoutPage = lazy(() => import("./pages/CheckoutPage"));
@@ -52,6 +52,11 @@ function App() {
         <Route path="/registro" element={
           <Suspense fallback={<></>}>
             <Register />
+          </Suspense>
+        } />
+        <Route path="/confirmacion" element={
+          <Suspense fallback={<></>}>
+            <SuccessPage />
           </Suspense>
         } />
         <Route path="*" element={

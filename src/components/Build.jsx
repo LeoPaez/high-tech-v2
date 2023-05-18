@@ -73,7 +73,7 @@ const CardSpecIcon = styled.img`
 const CardSpecText = styled.div`
 `
 
-const Build = ({ src, name, price, cpu, gpu, ram, cooling, id }) => {
+const Build = ({ id, src, title, price, cpu, gpu, ram, cooling }) => {
   const buildPrice = (price * 300).toLocaleString("us")
 
   return (
@@ -81,7 +81,7 @@ const Build = ({ src, name, price, cpu, gpu, ram, cooling, id }) => {
       <Link to={`/pc-armada/${id}`}>
         <BuildCard>
           <CardImg src={src} />
-          <CardName>{name}</CardName>
+          <CardName>{title}</CardName>
           <CardInfo>
             <CardPriceText>Desde</CardPriceText>
             <CardPrice>${buildPrice}</CardPrice>

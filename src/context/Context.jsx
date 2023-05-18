@@ -1,5 +1,7 @@
 import React, { useState, useEffect, createContext } from 'react'
 import { products } from "../data/Products";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 export const MyContext = createContext()
 
@@ -35,7 +37,18 @@ export const ContextProvider = ({ children }) => {
   const openCartMenu = () => {
     setOpenCart(!openCart)
     setOpen(false)
+    console.log(cart);
   }
+
+  const [cart, setCart] = useState([])
+
+  const quantity = cart.reduce((acc, curr) => {
+    return acc + curr.quantity
+  }, 0)
+
+  const totalPrice = cart.reduce((acc, curr) => {
+    return acc + curr.quantity * curr.price
+  }, 0)
 
   return (
     <MyContext.Provider
@@ -48,7 +61,11 @@ export const ContextProvider = ({ children }) => {
         openCart,
         setOpenCart,
         openBurgerMenu,
-        openCartMenu
+        openCartMenu,
+        cart,
+        setCart,
+        quantity,
+        totalPrice
       }}
     >
       {children}

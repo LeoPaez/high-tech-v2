@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from "styled-components"
 import CartProduct from "../components/CartMenu/CartProduct"
 import { MainButton } from "../components/Build"
 import MPLogo from "/assets/img/logos/mp-logo2.webp"
 import PaypalLogo from "/assets/img/logos/paypal-logo.png"
 import BtcLogo from "/assets/img/logos/btc-logo.png"
+import { MyContext } from "../context/Context"
+import { MenuItems } from "../components/CartMenu/CartMenu"
+import { LinkButton } from "../components/Nav"
 
 const CheckoutCont = styled.div`
   display: flex;
@@ -106,11 +109,7 @@ const CheckoutOrder = styled.div`
   padding: 40px 20px;
   border-radius: 0 6px 6px 0;
 `
-const CheckoutItems = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-`
+
 const CheckoutItemsTitle = styled.h3`
   span {
     color: grey;
@@ -130,6 +129,8 @@ const CheckoutPrice = styled.p`
 `
 
 const CheckoutPage = () => {
+  const { cart, quantity } = useContext(MyContext)
+
   return (
     <>
       <CheckoutCont>
@@ -182,12 +183,21 @@ const CheckoutPage = () => {
           <CheckoutOrder>
             <CheckoutItemsTitle>
               Productos
-              <span> (2)</span>
+              <span> ({quantity})</span>
             </CheckoutItemsTitle>
-            <CheckoutItems>
-              <CartProduct />
-              <CartProduct />
-            </CheckoutItems>
+            <MenuItems>
+              {
+                cart.map((product) => 
+                  <CartProduct
+                      key={product.id}
+                      id={product.id}
+                      img={product.img}
+                      title={product.title}
+                      price={product.price}
+                    />
+                )
+              }
+            </MenuItems>
             <CheckoutPrices>
               <CheckoutPrice>Subtotal:</CheckoutPrice>
               <CheckoutPrice>$246.000 ARS</CheckoutPrice>
@@ -200,7 +210,9 @@ const CheckoutPage = () => {
               <CheckoutPrice>Total:</CheckoutPrice>
               <CheckoutPrice>$246.000 ARS</CheckoutPrice>
             </CheckoutPrices>
-            <MainButton center>Finalizar compra</MainButton>
+            <LinkButton to="/confirmacion">
+              <MainButton center>Finalizar compra</MainButton>
+            </LinkButton>
           </CheckoutOrder>
         </Checkout>
       </CheckoutCont>

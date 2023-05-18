@@ -5,6 +5,8 @@ import CartProduct from "./CartProduct";
 import { Cart, CartCount, LinkButton, NavIcon } from "../Nav";
 import { MyContext } from "../../context/Context";
 import { useContext } from "react";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const CartMenuCont = styled.div`
   list-style: none;
@@ -41,7 +43,7 @@ const MenuInfo = styled.div`
     font-size: 20px;
   }
 `
-const MenuItems = styled.div`
+export const MenuItems = styled.div`
   display: flex;
   flex-direction: column;
   height: 460px;
@@ -55,6 +57,10 @@ const MenuItems = styled.div`
     background-color: #adb5bd;
     border-radius: 5px;
   }
+`
+const EmptyCartMsg = styled.p`
+  font-size: 18px;
+  margin: auto;
 `
 const MenuActions = styled.div`
   display: flex;
@@ -75,23 +81,49 @@ const MenuTotalText = styled.p`
 `
 const MenuButton = styled.button`
   width: 100%;
-  background-color: ${props => props.secondary ? "transparent" : "#ff7900"};
+  background-color: ${props => props.secondary ? "transparent" : props.disabled ? "grey" : "#ff7900"};
   border: 2px solid ${props => props.secondary ? "#ff7900" : "transparent"};
   padding: 9px 0;
   border-radius: 6px;
   color: ${props => props.secondary ? "#0e1111" : "#FFF"};
   font-weight: 700;
   font-size: 16px;
-  cursor: pointer;
+  cursor: ${props => props.disabled ? "not-allowed" : "pointer"};
   transition: all 0.3s ease 0s;
   :hover {
     background-color: #ff7900;
+    background-color: ${props => props.disabled ? "grey" : "#ff7900"};
     color: #FFF;
   }
 `
 
 const Menu = () => {
-  const { openCart, setOpenCart } = useContext(MyContext)
+  const { openCart, setOpenCart, cart, setCart, totalPrice } = useContext(MyContext)
+  
+  const MySwal = withReactContent(Swal)
+
+  const clearCart = () => {
+    MySwal.fire({
+      title: '¿Estas seguro?',
+      text: 'Vas a vaciar el contenido de tu carrito',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#38b000',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Confirmar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: '¡Borrado!',
+          text: 'Vaciaste tu carrito',
+          icon: 'warning',
+          confirmButtonColor: '#38b000',
+        })
+        setCart([]);
+      }
+    })
+  }
 
   return (
     <CartMenuCont open={openCart}>
@@ -99,23 +131,39 @@ const Menu = () => {
       <MenuInfo>
         <h3>Tus productos</h3>
         <MenuItems>
-          <CartProduct />
-          <CartProduct />
-          <CartProduct />
-          <CartProduct />
-          <CartProduct />
+          {
+            cart.map((product) => 
+              <CartProduct
+                key={product.id}
+                id={product.id}
+                img={product.img}
+                title={product.title}
+                price={product.price}
+              />
+            )
+          }
+          {
+            !cart.length &&
+            <EmptyCartMsg>No hay productos en el carrito</EmptyCartMsg>
+          }
         </MenuItems>
       </MenuInfo>
       <MenuActions>
         <Bar />
         <MenuTotal>
           <MenuTotalText>Total:</MenuTotalText>
-          <p>$0 ARS</p>
+          <p>${(totalPrice * 300).toLocaleString("us")} ARS</p>
         </MenuTotal>
         <LinkButton to="/checkout" onClick={() => setOpenCart(!openCart)}>
-          <MenuButton>Comprar</MenuButton>
+          <MenuButton disabled={!cart.length ? true : false}>
+            Comprar
+          </MenuButton>
         </LinkButton>
-        <MenuButton secondary>
+        <MenuButton 
+          secondary={!cart.length ? false : true}
+          disabled={!cart.length ? true : false}
+          onClick={clearCart}
+        >
           Vaciar carrito
         </MenuButton>
       </MenuActions>
@@ -124,7 +172,7 @@ const Menu = () => {
 }
 
 const CartMenu = () => {
-  const { setOpenCart, openCartMenu } = useContext(MyContext)
+  const { setOpenCart, openCartMenu, quantity } = useContext(MyContext)
   
   useEffect(() => {
     const handleScroll = () => {
@@ -143,7 +191,7 @@ const CartMenu = () => {
       <Menu />
       <Cart onClick={openCartMenu}>
         <NavIcon src={CartIcon} />
-        <CartCount>0</CartCount>
+        <CartCount>{quantity}</CartCount>
       </Cart>
     </>
   )

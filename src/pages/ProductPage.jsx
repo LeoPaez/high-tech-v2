@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from "styled-components"
 import Product from "../components/Product"
 import { MainButton } from "../components/Build"
@@ -9,6 +9,7 @@ import DeliveryIcon from "/assets/img/icons/delivery-icon.png"
 import { products } from "../data/Products"
 import { useParams } from "react-router-dom"
 import RecommendedProducts from "../components/RecommendedProducts"
+import { MyContext } from "../context/Context"
 
 export const ProductPageCont = styled.div`
   display: flex;
@@ -141,6 +142,31 @@ const ProductPage = () => {
   const productPriceMP = ((product.price * 300) * 1.2).toLocaleString("us")
   const productInstallments = ((product.price * 300) / 12).toLocaleString("us")
 
+  const { setCart } = useContext(MyContext)
+
+  const addToCart = () => {
+    setCart((currItems) => {
+      const isItemsFound = currItems.find((item) => item.id === product.id);
+      if (isItemsFound) {
+        return currItems.map((item) => {
+          if (item.id === product.id) {
+            return { ...item, quantity: item.quantity + 1 };
+          } else {
+            return item;
+          }
+        });
+      } else {
+        return [...currItems, { 
+          id: product.id, 
+          img: product.img, 
+          title: product.title, 
+          price: product.price, 
+          quantity: 1 
+        }];
+      }
+    });
+  };
+
   return (
     <> 
       <ProductPageCont>
@@ -149,7 +175,7 @@ const ProductPage = () => {
             <ProductImage padWhite src={product.img} />
           </ProductImgCont>
           <ProductInfo>
-            <ProductName>{product.name}</ProductName>
+            <ProductName>{product.title}</ProductName>
             <ProductCategory>{product.category}</ProductCategory>
             <ProductPriceText>Precio efectivo o transferencia</ProductPriceText>
             <ProductPrice>${productPrice}</ProductPrice>
@@ -178,6 +204,7 @@ const ProductPage = () => {
             <MainButton
               pad="7px 60px"
               fontSize="18px"
+              onClick={addToCart}
             >
               Agregar al carrito
             </MainButton>

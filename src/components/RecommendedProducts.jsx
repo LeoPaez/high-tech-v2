@@ -33,7 +33,7 @@ const RecommendedProducts = () => {
         <Products>
           {
             recommendedProducts.map((product) => 
-              <Product key={product.id} title={product.name} img={product.img} price={product.price} id={product.id} />
+              <Product key={product.id} title={product.title} img={product.img} price={product.price} id={product.id} />
             ) 
           }
         </Products>

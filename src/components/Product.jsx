@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import styled from "styled-components"
 import { MainButton } from "./Build"
 import { Link } from "react-router-dom"
+import { MyContext } from "../context/Context"
+import AddModal from "./AddModal"
 
 const ProductCont = styled.div`
   display: flex;
@@ -31,9 +33,34 @@ const ProductPrice = styled.p`
   font-weight: 700;
 `
 
-const Product = ({ img, title, price, id }) => {
-  const cancelLink = (e) => {
-    e.preventDefault()
+const Product = ({ img, id, title, price }) => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [addedToCart, setAddedToCart] = useState(false);
+
+  const { setCart } = useContext(MyContext)
+
+  const addToCart = () => {
+    setCart((currItems) => {
+      const isItemsFound = currItems.find((item) => item.id === id);
+      if (isItemsFound) {
+        return currItems.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity + 1 };
+          } else {
+            return item;
+          }
+        });
+      } else {
+        return [...currItems, { id, img, title, price, quantity: 1 }];
+      }
+    });
+    setAddedToCart(true);
+    setModalOpen(true); // abrir el modal inmediatamente
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault(),
+    addToCart()
   }
 
   const productPrice = (price * 300).toLocaleString("us")
@@ -45,11 +72,13 @@ const Product = ({ img, title, price, id }) => {
           <ProductImg src={img} alt={title} />
           <ProductName>{title}</ProductName>
           <ProductPrice>${productPrice}</ProductPrice>
-          <MainButton onClick={cancelLink}
+          <MainButton 
+            onClick={handleClick}
             pad="8px 38px"
           >
             Agregar al carrito
           </MainButton>
+          {addedToCart && <AddModal onClose={() => setModalOpen(false)} open={modalOpen} />}
         </ProductCont>
       </Link>
     </>

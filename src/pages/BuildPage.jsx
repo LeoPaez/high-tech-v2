@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from "styled-components"
 import { MainButton } from "../components/Build"
 import MercadoPagoLogo from "/assets/img/logos/mp-logo.webp"
@@ -28,6 +28,7 @@ import ProductCarousel from "../components/ProductCarousel"
 import { builds } from "../data/Builds"
 import { useParams } from "react-router-dom"
 import RecommendedProducts from "../components/RecommendedProducts"
+import { MyContext } from "../context/Context"
 
 const BuildComponents = styled.form`
   display: flex;
@@ -68,6 +69,31 @@ const BuildPage = () => {
   const buildPrice = (build.price * 300).toLocaleString("us")
   const buildPriceMP = ((build.price * 300) * 1.2).toLocaleString("us")
   const buildInstallments = ((build.price * 300) / 12).toLocaleString("us")
+
+  const { setCart } = useContext(MyContext)
+
+  const addToCart = () => {
+    setCart((currItems) => {
+      const isItemsFound = currItems.find((item) => item.id === build.id);
+      if (isItemsFound) {
+        return currItems.map((item) => {
+          if (item.id === build.id) {
+            return { ...item, quantity: item.quantity + 1 };
+          } else {
+            return item;
+          }
+        });
+      } else {
+        return [...currItems, { 
+          id: build.id, 
+          img: build.img, 
+          title: build.title, 
+          price: build.price, 
+          quantity: 1 
+        }];
+      }
+    });
+  };
 
   return (
     <> 
@@ -151,6 +177,7 @@ const BuildPage = () => {
             <MainButton
               pad="7px 60px"
               fontSize="18px"
+              onClick={addToCart}
             >
               Agregar al carrito
             </MainButton>
