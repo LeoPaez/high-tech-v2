@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styled from "styled-components"
 import CartProduct from "../components/CartMenu/CartProduct"
 import { MainButton } from "../components/Build"
@@ -129,7 +129,18 @@ const CheckoutPrice = styled.p`
 `
 
 const CheckoutPage = () => {
-  const { cart, quantity } = useContext(MyContext)
+  const { cart, quantity, totalPrice } = useContext(MyContext)
+  const [shipping, setShipping] = useState(0)
+
+  useEffect(() => {
+    if(totalPrice <= 30000 / 300 && totalPrice > 0) {
+      setShipping(2000)
+    } else {
+      setShipping(0)
+    }
+    console.log(totalPrice);
+  }, [totalPrice])
+  
 
   return (
     <>
@@ -189,7 +200,7 @@ const CheckoutPage = () => {
               {
                 cart.map((product) => 
                   <CartProduct
-                      key={product.id}
+                      key={product.title}
                       id={product.id}
                       img={product.img}
                       title={product.title}
@@ -200,15 +211,15 @@ const CheckoutPage = () => {
             </MenuItems>
             <CheckoutPrices>
               <CheckoutPrice>Subtotal:</CheckoutPrice>
-              <CheckoutPrice>$246.000 ARS</CheckoutPrice>
+              <CheckoutPrice>${(totalPrice * 300).toLocaleString("us")} ARS</CheckoutPrice>
             </CheckoutPrices>
             <CheckoutPrices>
               <CheckoutPrice>Envio:</CheckoutPrice>
-              <CheckoutPrice>$0 ARS</CheckoutPrice>
+              <CheckoutPrice>{shipping}$ ARS</CheckoutPrice>
             </CheckoutPrices>
             <CheckoutPrices>
               <CheckoutPrice>Total:</CheckoutPrice>
-              <CheckoutPrice>$246.000 ARS</CheckoutPrice>
+              <CheckoutPrice>${((totalPrice * 300) + shipping).toLocaleString("us")} ARS</CheckoutPrice>
             </CheckoutPrices>
             <LinkButton to="/confirmacion">
               <MainButton center>Finalizar compra</MainButton>
