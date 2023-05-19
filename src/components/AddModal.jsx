@@ -7,7 +7,7 @@ const Modal = styled.div`
   align-items: center;
   justify-content: center;
   color: #FFF;
-  background-color: #ff6d00;
+  background-color: #ff7900;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -17,6 +17,7 @@ const Modal = styled.div`
   font-weight: 700;
   transform: ${props => props.open ? "translateY(0)" : "translateY(200%)"};
   transition: transform 0.5s ease-in-out;
+  z-index: 100;
 `
 
 const AddModal = ({ open, onClose }) => {
