@@ -64,8 +64,8 @@ const BuildComponentOption = styled.option`
 `
 
 const BuildPage = () => {
-  const {buildId} = useParams()
-  const build = builds.find(build => build.id === parseInt(buildId))
+  const {buildTitle} = useParams()
+  const build = builds.find(build => build.title === buildTitle)
   const buildPrice = (build.price * 300).toLocaleString("us")
   const buildPriceMP = ((build.price * 300) * 1.2).toLocaleString("us")
   const buildInstallments = ((build.price * 300) / 12).toLocaleString("us")
@@ -108,7 +108,7 @@ const BuildPage = () => {
             />
           </ProductImgCont>
           <ProductInfo>
-            <ProductName>Pc Armada {build.name}</ProductName>
+            <ProductName>Pc Armada {build.title}</ProductName>
             <ProductCategory>{build.category}</ProductCategory>
             <ProductPriceText>Precio efectivo o transferencia</ProductPriceText>
             <ProductPrice>${buildPrice}</ProductPrice>

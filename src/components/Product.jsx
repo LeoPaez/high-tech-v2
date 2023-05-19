@@ -33,7 +33,7 @@ const ProductPrice = styled.p`
   font-weight: 700;
 `
 
-const Product = ({ img, id, title, price }) => {
+const Product = ({ img, id, title, price, category }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
 
@@ -51,11 +51,13 @@ const Product = ({ img, id, title, price }) => {
           }
         });
       } else {
-        return [...currItems, { id, img, title, price, quantity: 1 }];
+        return [...currItems, { id, img, title, price, category, quantity: 1 }];
       }
     });
     setAddedToCart(true);
-    setModalOpen(true); // abrir el modal inmediatamente
+    setTimeout(() => {
+      setModalOpen(true); // abrir el modal inmediatamente
+    }, 100);
   };
 
   const handleClick = (e) => {
@@ -67,7 +69,7 @@ const Product = ({ img, id, title, price }) => {
 
   return (
     <>
-      <Link to={`/producto/${id}`}>
+      <Link to={`/producto/${title}`}>
         <ProductCont>
           <ProductImg src={img} alt={title} />
           <ProductName>{title}</ProductName>

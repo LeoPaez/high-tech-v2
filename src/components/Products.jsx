@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Product from "./Product"
 import { useContext } from "react"
 import { MyContext } from "../context/Context"
+import Category from "./Category"
 
 const ProductsCont = styled.div`
   display: flex;
@@ -25,11 +26,12 @@ const Products = () => {
         {
           data.map((product) => 
             <Product
-              key={product.id}
+              key={product.title}
               title={product.title}
               img={product.img}
               price={product.price}
               id={product.id}
+              category={product.category}
             />
           )
           

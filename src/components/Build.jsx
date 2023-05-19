@@ -78,7 +78,7 @@ const Build = ({ id, src, title, price, cpu, gpu, ram, cooling }) => {
 
   return (
     <>
-      <Link to={`/pc-armada/${id}`}>
+      <Link to={`/pc-armada/${title}`}>
         <BuildCard>
           <CardImg src={src} />
           <CardName>{title}</CardName>

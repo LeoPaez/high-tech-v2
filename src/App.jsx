@@ -29,12 +29,12 @@ function App() {
             <Home /> 
           </Suspense>
           } />
-        <Route path="/producto/:productId" element={
+        <Route path="/producto/:productTitle" element={
           <Suspense fallback={<></>}>
             <ProductPage />
           </Suspense>
           } />
-        <Route path="/pc-armada/:buildId" element={
+        <Route path="/pc-armada/:buildTitle" element={
           <Suspense fallback={<></>}>
             <BuildPage />
           </Suspense> 

@@ -134,11 +134,12 @@ const Menu = () => {
           {
             cart.map((product) => 
               <CartProduct
-                key={product.id}
+                key={product.title}
                 id={product.id}
                 img={product.img}
                 title={product.title}
                 price={product.price}
+                category={product.category}
               />
             )
           }
