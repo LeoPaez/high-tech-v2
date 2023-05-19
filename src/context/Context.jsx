@@ -1,7 +1,5 @@
 import React, { useState, useEffect, createContext } from 'react'
 import { products } from "../data/Products";
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 
 export const MyContext = createContext()
 

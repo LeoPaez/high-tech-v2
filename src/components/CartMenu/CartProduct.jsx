@@ -1,7 +1,9 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import { MyContext } from "../../context/Context"
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const ProductCont = styled.div`
   display: flex;
@@ -63,8 +65,9 @@ const ProductQuantityNum = styled.p`
   font-weight: 700;
 `
 
-const CartProduct = ({ id, img, title, price }) => {
+const CartProduct = ({ id, img, title, price, category }) => {
   const {cart, setCart } = useContext(MyContext)
+  const showConfirmationRef = useRef(false); // Usamos useRef en lugar de useState
 
   const addToCart = () => {
     setCart((currItems) => {
@@ -84,16 +87,35 @@ const CartProduct = ({ id, img, title, price }) => {
   };
 
   const removeProduct = (id) => {
+    const MySwal = withReactContent(Swal);
+
     setCart((currItems) => {
       const itemToDelete = currItems.find((item) => item.id === id);
   
       if (itemToDelete?.quantity === 1) {
-        // Mostrar alerta antes de eliminar el último producto
-        const shouldDelete = window.confirm(
-          `¿Seguro que desea eliminar el producto ${itemToDelete.title} del carrito?`
-        );
-        
-        if (shouldDelete) {
+        MySwal.fire({
+          title: '¿Estás seguro?',
+          text: 'Vas a eliminar este producto de tu carrito',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#38b000',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Confirmar',
+          cancelButtonText: 'Cancelar'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire({
+              title: '¡Borrado!',
+              text: 'Eliminaste el producto de tu carrito',
+              icon: 'warning',
+              confirmButtonColor: '#38b000',
+            });
+            showConfirmationRef.current = true; // Actualizamos la variable de referencia
+            setCart(currItems.filter((item) => item.id !== id)); // Filtramos directamente aca
+          }
+        });
+  
+        if (showConfirmationRef.current) {
           return currItems.filter((item) => item.id !== id);
         } else {
           return currItems;
@@ -114,6 +136,17 @@ const CartProduct = ({ id, img, title, price }) => {
     return cart.find((item) => item.id === id)?.quantity || 0
   }
 
+  const getProductLink = () => {
+    if (category) {
+      return "producto";
+    } else {
+      return "pc-armada";
+    }
+    console.log(category);
+  };
+
+  const productLink = getProductLink();
+
   const productQuantity = getQuantityById(id)
 
   const productPrice = (price * 300).toLocaleString("us")
@@ -122,11 +155,11 @@ const CartProduct = ({ id, img, title, price }) => {
     <>
       <ProductCont>
         <div>
-          <ProductLink to={`/producto/${id}`}>
+          <ProductLink to={`/${productLink}/${title}`}>
             <ProductImg src={img} alt={title} />
           </ProductLink>
           <ProductInfo>
-            <ProductLink to={`/producto/${id}`}>
+            <ProductLink to={`/producto/${title}`}>
               <ProductName>{title}</ProductName>
             </ProductLink>
             <ProductPrice>${productPrice}</ProductPrice>
