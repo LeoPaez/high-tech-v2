@@ -68,8 +68,8 @@ export const Cart = styled.div`
   cursor: pointer;
 `
 export const CartCount = styled.p`
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   font-size: 14px;
   background-color: #ff6d00;
   color: #FFF;
