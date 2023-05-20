@@ -129,7 +129,7 @@ const CheckoutPrice = styled.p`
 `
 
 const CheckoutPage = () => {
-  const { cart, quantity, totalPrice } = useContext(MyContext)
+  const { cart, setCart, quantity, totalPrice } = useContext(MyContext)
   const [shipping, setShipping] = useState(0)
 
   useEffect(() => {
@@ -222,7 +222,7 @@ const CheckoutPage = () => {
               <CheckoutPrice>${((totalPrice * 300) + shipping).toLocaleString("us")} ARS</CheckoutPrice>
             </CheckoutPrices>
             <LinkButton to="/confirmacion">
-              <MainButton center>Finalizar compra</MainButton>
+              <MainButton center onClick={() => setCart([])}>Finalizar compra</MainButton>
             </LinkButton>
           </CheckoutOrder>
         </Checkout>
