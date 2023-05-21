@@ -47,6 +47,8 @@ export const ContextProvider = ({ children }) => {
     return acc + curr.quantity * curr.price
   }, 0)
 
+  const [userEmail, setUserEmail] = useState("")
+
   return (
     <MyContext.Provider
       value={{
@@ -62,7 +64,9 @@ export const ContextProvider = ({ children }) => {
         cart,
         setCart,
         quantity,
-        totalPrice
+        totalPrice,
+        userEmail,
+        setUserEmail
       }}
     >
       {children}

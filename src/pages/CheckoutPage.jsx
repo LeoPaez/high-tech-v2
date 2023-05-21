@@ -158,7 +158,7 @@ const CheckoutPrice = styled.p`
 `
 
 const CheckoutPage = () => {
-  const { cart, setCart, quantity, totalPrice } = useContext(MyContext)
+  const { cart, setCart, quantity, totalPrice, setUserEmail  } = useContext(MyContext)
   const [formCompleted, setFormCompleted] = useState("")
   const [shipping, setShipping] = useState(0)
   const [mpFee, setMpFee] = useState(1)
@@ -180,10 +180,6 @@ const CheckoutPage = () => {
     console.log(totalPrice);
   }, [totalPrice])
   
-  const submitForm = (values) => {
-    console.log(values);
-  }
-
   return (
     <>
       <CheckoutCont>
@@ -262,8 +258,7 @@ const CheckoutPage = () => {
                 return errors;
               }}
               onSubmit={(values) => {
-                submitForm
-                console.log(formCompleted)
+                setUserEmail(values.email)
               }}
             >
               {( {errors, submitForm} ) => (
