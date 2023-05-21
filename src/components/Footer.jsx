@@ -121,14 +121,14 @@ const Footer = () => {
           <FooterColumn>
             <FootTitle>Quiénes somos</FootTitle>
             <FootLink>Sobre nosotros</FootLink>
-            <FootLink>Seguimiento de envios</FootLink>
+            <FootLink>Seguimiento de envíos</FootLink>
             <FootLink>Preguntas frecuentes</FootLink>
             <FootLink>Soporte</FootLink>
           </FooterColumn>
           <FooterColumn>
             <FootTitle>Recursos</FootTitle>
-            <FootLink>Terminos de uso</FootLink>
-            <FootLink>Politicas de privacidad</FootLink>
+            <FootLink>Términos de uso</FootLink>
+            <FootLink>Políticas de privacidad</FootLink>
             <FootLink>Garantías</FootLink>
             <FootLink>Devoluciones</FootLink>
           </FooterColumn>

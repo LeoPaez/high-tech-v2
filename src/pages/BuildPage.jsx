@@ -119,7 +119,7 @@ const BuildPage = () => {
               </ProductPriceMPInfo>
               <MPLogo src={MercadoPagoLogo} />
             </ProductPriceMPCont>
-            <ProductInstallments>12 cuotas sin interes de ${buildInstallments}</ProductInstallments>
+            <ProductInstallments>12 cuotas sin interés de ${buildInstallments}</ProductInstallments>
             <BuildComponents>
               <BuildComponent>
                 <BuildComponentName htmlFor="cpu">Procesador</BuildComponentName>
@@ -167,11 +167,11 @@ const BuildPage = () => {
               </ProductDetail>
               <ProductDetail>
                 <ProductDetailIcon src={ShieldIcon} />
-                <p>Garantia - 24 meses</p>
+                <p>Garantía - 24 meses</p>
               </ProductDetail>
               <ProductDetail>
                 <ProductDetailIcon src={DeliveryIcon} />
-                <p>Envio gratis a todo el país</p>
+                <p>Envió gratis a todo el país</p>
               </ProductDetail>
             </ProductDetails>
             <MainButton

@@ -9,7 +9,7 @@ export const builds = [
     cpu: "Intel Core i5 / Ryzen 5600",
     gpu: "GeForce GTX 1660",
     ram: "16GB DDR4",
-    cooling: "Refrigeración por aire estandar",
+    cooling: "Refrigeración por aire estándar",
     components: {
       cpu: ["Intel Core i5-12400F", "AMD Ryzen 5 5600X"],
       gpu: ["ASUS TUF Gaming GeForce GTX 1660", "MSI AMD Radeon RX 6600"],
@@ -32,7 +32,7 @@ export const builds = [
     cpu: "Intel Core i7 / Ryzen 5800",
     gpu: "GeForce RTX 3060",
     ram: "16GB DDR4",
-    cooling: "Refrigeración liquida estandar",
+    cooling: "Refrigeración liquida estándar",
     components: {
       cpu: ["Intel Core i7-11700K", "AMD Ryzen 7 5800X"],
       gpu: ["Asus Dual GeForce RTX 3060 OC Edition", "Sapphire NITRO+ AMD Radeon RX 6800"],
@@ -55,7 +55,7 @@ export const builds = [
     cpu: "Intel Core i9 / Ryzen 5900",
     gpu: "GeForce RTX 3090",
     ram: "32GB DDR4",
-    cooling: "Refrigeración liquida estandar",
+    cooling: "Refrigeración liquida estándar",
     components: {
       cpu: ["Intel Core i9-13900K", "AMD Ryzen 9 5900X"],
       gpu: ["EVGA GeForce RTX 3090", "MSI AMD Radeon RX 6800"],

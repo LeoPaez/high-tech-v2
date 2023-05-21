@@ -35,7 +35,6 @@ export const ContextProvider = ({ children }) => {
   const openCartMenu = () => {
     setOpenCart(!openCart)
     setOpen(false)
-    console.log(cart);
   }
 
   const [cart, setCart] = useState([])

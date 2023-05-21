@@ -40,7 +40,7 @@ const SuccessPage = () => {
           <span>¡</span>Completaste tu compra<span>!</span>
         </SuccessTitle>
         <SuccessText>
-          Te enviamos a tu correo la confirmación de compra con el detalle de tu orden junto con el enlace para seguir tu envio
+          Te enviamos a tu correo la confirmación de compra con el detalle de tu orden junto con el enlace para seguir tu envió.
         </SuccessText>
         <LinkButton to="/">
           <MainButton center>Volver al Inicio</MainButton>

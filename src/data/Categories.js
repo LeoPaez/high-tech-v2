@@ -38,7 +38,7 @@ export const categories = [
   {
     id: 7,
     img: "/assets/img/category-icons/hdd.png",
-    title: "Discos rigidos",
+    title: "Discos rígidos",
     category: "discos-rigidos",
   },
   {

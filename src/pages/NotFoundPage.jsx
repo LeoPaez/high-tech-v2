@@ -37,7 +37,7 @@ const NotFoundPage = () => {
         <ErrorSubtitle>
           404 <span>-</span> Página no encontrada
           </ErrorSubtitle>
-        <ErrorText>No pudimos encontrar la página que buscabas, intenta volver atras o dirigite al inicio</ErrorText>
+        <ErrorText>No pudimos encontrar la página que buscabas, intenta volver atrás o dirigite al inicio.</ErrorText>
         <LinkButton to="/">
           <MainButton center>Volver al Inicio</MainButton>
         </LinkButton>

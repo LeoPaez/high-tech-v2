@@ -32,7 +32,7 @@ const Builds = () => {
     <>
       <BuildsCont>
         <BuildTitle>
-          Elegi tu setup ideal para <Highlight>jugar</Highlight> y <Highlight>trabajar</Highlight>
+          Elegí tu setup ideal para <Highlight>jugar</Highlight> y <Highlight>trabajar</Highlight>
         </BuildTitle>
         <BuildCards>
           {

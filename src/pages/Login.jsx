@@ -104,7 +104,7 @@ const Login = () => {
         </AccessForm>
         <AccessLinks>
           <AccessLink to="#">¿Olvidaste tu contraseña?</AccessLink>
-          <AccessLink to="/registro">¿No tienes una cuenta? Registrate</AccessLink>     
+          <AccessLink to="/registro">¿No tienes una cuenta? Regístrate</AccessLink>     
         </AccessLinks>     
       </Access>
     </AccessCont>

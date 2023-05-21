@@ -186,7 +186,7 @@ const ProductPage = () => {
               </ProductPriceMPInfo>
               <MPLogo src={MercadoPagoLogo} />
             </ProductPriceMPCont>
-            <ProductInstallments>12 cuotas sin interes de ${productInstallments}</ProductInstallments>
+            <ProductInstallments>12 cuotas sin interés de ${productInstallments}</ProductInstallments>
             <ProductDetails>
               <ProductDetail>
                 <ProductDetailIcon src={CheckIcon} />
@@ -194,11 +194,11 @@ const ProductPage = () => {
               </ProductDetail>
               <ProductDetail>
                 <ProductDetailIcon src={ShieldIcon} />
-                <p>Garantia - 24 meses</p>
+                <p>Garantía - 24 meses</p>
               </ProductDetail>
               <ProductDetail>
                 <ProductDetailIcon src={DeliveryIcon} />
-                <p>Envio gratis a todo el país</p>
+                <p>Envió gratis a todo el país</p>
               </ProductDetail>
             </ProductDetails>
             <MainButton
