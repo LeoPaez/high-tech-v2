@@ -192,7 +192,9 @@ const CartMenu = () => {
       <Menu />
       <Cart onClick={openCartMenu}>
         <NavIcon src={CartIcon} />
-        <CartCount>{quantity}</CartCount>
+        <CartCount>
+          <p>{quantity}</p>
+        </CartCount>
       </Cart>
     </>
   )

@@ -67,13 +67,16 @@ export const Cart = styled.div`
   position: relative;
   cursor: pointer;
 `
-export const CartCount = styled.p`
+export const CartCount = styled.div`
   width: 20px;
   height: 20px;
-  font-size: 14px;
+  display: flex;
+  line-height: 20px;
+  justify-content: center;
+  align-items: center;
   background-color: #ff6d00;
   color: #FFF;
-  text-align: center;
+  font-size: 14px;
   border-radius: 50%;
   position: absolute;
   left: 16px;
