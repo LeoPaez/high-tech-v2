@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { products } from "../data/Products"
 import { Title } from "./News"
 import Product from "./Product"
@@ -17,14 +17,21 @@ const Products = styled.div`
 `
 
 const RecommendedProducts = () => {
-  let recommendedProducts = []
-  const filterRecommendedProducts = () => {
-    for (let i = 0; i < 4; i++) {
-      recommendedProducts.push(products[Math.floor(Math.random() * products.length)]);
+  const [recommendedProducts, setRecommendedProducts] = useState([]);
+
+  useEffect(() => {
+    const filterRecommendedProducts = () => {
+      const recommended = []
+      for (let i = 0; i < 4; i++) {
+        recommended.push(products[Math.floor(Math.random() * products.length)]);
+      }
+  
+      return recommended
     }
-    return recommendedProducts
-  }
-  filterRecommendedProducts()
+    
+    const recommended = filterRecommendedProducts();
+    setRecommendedProducts(recommended);  
+  }, [])
 
   return (
     <>
@@ -33,7 +40,12 @@ const RecommendedProducts = () => {
         <Products>
           {
             recommendedProducts.map((product) => 
-              <Product key={product.id} title={product.title} img={product.img} price={product.price} id={product.id} />
+              <Product
+                key={product.id}
+                title={product.title}
+                img={product.img}
+                price={product.price}
+                id={product.id} />
             ) 
           }
         </Products>
