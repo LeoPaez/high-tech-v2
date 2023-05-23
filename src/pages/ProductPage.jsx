@@ -10,6 +10,7 @@ import { products } from "../data/Products"
 import { useParams } from "react-router-dom"
 import RecommendedProducts from "../components/RecommendedProducts"
 import { MyContext } from "../context/Context"
+import AddModal from "../components/AddModal"
 
 export const ProductPageCont = styled.div`
   display: flex;
@@ -127,45 +128,18 @@ export const ProductDetailIcon = styled.img`
 `
 
 const ProductPage = () => {
-  let recommendedProducts = []
-  const filterRecommendedProducts = () => {
-    for (let i = 0; i < 4; i++) {
-      recommendedProducts.push(products[i]);
-    }
-    return recommendedProducts
-  }
-  filterRecommendedProducts()
-
   const {productTitle} = useParams()
   const product = products.find(prod => prod.title === productTitle)
   const productPrice = (product.price * 300).toLocaleString("us")
   const productPriceMP = ((product.price * 300) * 1.2).toLocaleString("us")
   const productInstallments = ((product.price * 300) / 12).toLocaleString("us")
 
-  const { setCart } = useContext(MyContext)
+  const { addToCart, modalOpen, addedToCart, setModalOpen } = useContext(MyContext)
 
-  const addToCart = () => {
-    setCart((currItems) => {
-      const isItemsFound = currItems.find((item) => item.id === product.id);
-      if (isItemsFound) {
-        return currItems.map((item) => {
-          if (item.id === product.id) {
-            return { ...item, quantity: item.quantity + 1 };
-          } else {
-            return item;
-          }
-        });
-      } else {
-        return [...currItems, { 
-          id: product.id, 
-          img: product.img, 
-          title: product.title, 
-          price: product.price, 
-          quantity: 1 
-        }];
-      }
-    });
-  };
+  const handleClick = (e) => {
+    e.preventDefault(),
+    addToCart(product.id, product.img, product.title, product.price, product.category)
+  }
 
   return (
     <> 
@@ -204,10 +178,11 @@ const ProductPage = () => {
             <MainButton
               pad="7px 60px"
               fontSize="18px"
-              onClick={addToCart}
+              onClick={handleClick}
             >
               Agregar al carrito
             </MainButton>
+            {addedToCart && <AddModal onClose={() => setModalOpen(false)} open={modalOpen} />}
           </ProductInfo>
         </ProductCont>
         <RecommendedProducts />

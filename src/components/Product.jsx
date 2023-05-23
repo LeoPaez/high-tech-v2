@@ -33,36 +33,12 @@ const ProductPrice = styled.p`
   font-weight: 700;
 `
 
-const Product = ({ img, id, title, price, category }) => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [addedToCart, setAddedToCart] = useState(false);
-
-  const { setCart } = useContext(MyContext)
-
-  const addToCart = () => {
-    setCart((currItems) => {
-      const isItemsFound = currItems.find((item) => item.id === id);
-      if (isItemsFound) {
-        return currItems.map((item) => {
-          if (item.id === id) {
-            return { ...item, quantity: item.quantity + 1 };
-          } else {
-            return item;
-          }
-        });
-      } else {
-        return [...currItems, { id, img, title, price, category, quantity: 1 }];
-      }
-    });
-    setAddedToCart(true);
-    setTimeout(() => {
-      setModalOpen(true); // abrir el modal inmediatamente
-    }, 100);
-  };
+const Product = ({ id, img, title, price, category }) => {
+  const { addToCart, modalOpen, addedToCart, setModalOpen } = useContext(MyContext)
 
   const handleClick = (e) => {
     e.preventDefault(),
-    addToCart()
+    addToCart(id, img, title, price, category)
   }
 
   const productPrice = (price * 300).toLocaleString("us")

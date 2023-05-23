@@ -29,6 +29,7 @@ import { builds } from "../data/Builds"
 import { useParams } from "react-router-dom"
 import RecommendedProducts from "../components/RecommendedProducts"
 import { MyContext } from "../context/Context"
+import AddModal from "../components/AddModal"
 
 const BuildComponents = styled.form`
   display: flex;
@@ -70,30 +71,12 @@ const BuildPage = () => {
   const buildPriceMP = ((build.price * 300) * 1.2).toLocaleString("us")
   const buildInstallments = ((build.price * 300) / 12).toLocaleString("us")
 
-  const { setCart } = useContext(MyContext)
+  const { addToCart, modalOpen, addedToCart, setModalOpen } = useContext(MyContext)
 
-  const addToCart = () => {
-    setCart((currItems) => {
-      const isItemsFound = currItems.find((item) => item.id === build.id);
-      if (isItemsFound) {
-        return currItems.map((item) => {
-          if (item.id === build.id) {
-            return { ...item, quantity: item.quantity + 1 };
-          } else {
-            return item;
-          }
-        });
-      } else {
-        return [...currItems, { 
-          id: build.id, 
-          img: build.img, 
-          title: build.title, 
-          price: build.price, 
-          quantity: 1 
-        }];
-      }
-    });
-  };
+  const handleClick = (e) => {
+    e.preventDefault(),
+    addToCart(build.id, build.img, build.title, build.price)
+  }
 
   return (
     <> 
@@ -177,10 +160,11 @@ const BuildPage = () => {
             <MainButton
               pad="7px 60px"
               fontSize="18px"
-              onClick={addToCart}
+              onClick={handleClick}
             >
               Agregar al carrito
             </MainButton>
+            {addedToCart && <AddModal onClose={() => setModalOpen(false)} open={modalOpen} />}
           </ProductInfo>
         </ProductCont>
         <RecommendedProducts />

@@ -47,6 +47,30 @@ export const ContextProvider = ({ children }) => {
     return acc + curr.quantity * curr.price
   }, 0)
 
+  const [modalOpen, setModalOpen] = useState(false);
+  const [addedToCart, setAddedToCart] = useState(false);
+
+  const addToCart = (id, img, title, price, category) => {
+    setCart((currItems) => {
+      const isItemsFound = currItems.find((item) => item.id === id);
+      if (isItemsFound) {
+        return currItems.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity + 1 };
+          } else {
+            return item;
+          }
+        });
+      } else {
+        return [...currItems, { id, img, title, price, category, quantity: 1 }];
+      }
+    });
+    setAddedToCart(true);
+    setTimeout(() => {
+      setModalOpen(true); // abrir el modal inmediatamente
+    }, 100);
+  };
+
   const [userEmail, setUserEmail] = useState("")
 
   return (
@@ -66,7 +90,11 @@ export const ContextProvider = ({ children }) => {
         quantity,
         totalPrice,
         userEmail,
-        setUserEmail
+        setUserEmail,
+        addToCart,
+        modalOpen,
+        setModalOpen,
+        addedToCart
       }}
     >
       {children}
