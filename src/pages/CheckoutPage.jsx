@@ -164,7 +164,7 @@ const CheckoutPage = () => {
   const [mpFee, setMpFee] = useState(1)
 
   const handleRadioChange = () => {
-    setMpFee(1.2)
+    setMpFee(1.1)
   };
 
   useEffect(() => {

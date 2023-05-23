@@ -68,7 +68,7 @@ const BuildPage = () => {
   const {buildTitle} = useParams()
   const build = builds.find(build => build.title === buildTitle)
   const buildPrice = (build.price * 300).toLocaleString("us")
-  const buildPriceMP = ((build.price * 300) * 1.2).toLocaleString("us")
+  const buildPriceMP = ((build.price * 300) * 1.1).toLocaleString("us")
   const buildInstallments = ((build.price * 300) / 12).toLocaleString("us")
 
   const { addToCart, modalOpen, addedToCart, setModalOpen } = useContext(MyContext)
