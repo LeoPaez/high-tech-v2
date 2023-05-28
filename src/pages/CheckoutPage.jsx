@@ -1,14 +1,23 @@
 import React, { useContext, useEffect, useState } from 'react'
+
+// useContext
+import { MyContext } from "../context/Context"
+
+// Styled Components
 import styled from "styled-components"
-import CartProduct from "../components/CartMenu/CartProduct"
+import { LinkButton } from "../components/Nav"
+import { MenuItems } from "../components/CartMenu/CartMenu"
 import { MainButton } from "../components/Build"
+
+// Formik
+import { Formik, Form, Field, ErrorMessage } from "formik"
+
+// Components
+import CartProduct from "../components/CartMenu/CartProduct"
+
+// Images
 import MPLogo from "/assets/img/logos/mp-logo2.webp"
 import PaypalLogo from "/assets/img/logos/paypal-logo.png"
-// import BtcLogo from "/assets/img/logos/btc-logo.png"
-import { MyContext } from "../context/Context"
-import { MenuItems } from "../components/CartMenu/CartMenu"
-import { LinkButton } from "../components/Nav"
-import { Formik, Form, Field, ErrorMessage } from "formik"
 
 const CheckoutCont = styled.div`
   display: flex;

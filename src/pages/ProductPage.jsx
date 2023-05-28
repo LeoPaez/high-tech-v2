@@ -1,16 +1,27 @@
 import React, { useContext } from 'react'
+
+// useContext 
+import { MyContext } from "../context/Context"
+
+// Styled Components
 import styled from "styled-components"
-import Product from "../components/Product"
 import { MainButton } from "../components/Build"
+
+// React Router
+import { useParams } from "react-router-dom"
+
+// Components
+import AddModal from "../components/AddModal"
+import RecommendedProducts from "../components/RecommendedProducts"
+
+// Data
+import { products } from "../data/Products"
+
+// Images
 import MercadoPagoLogo from "/assets/img/logos/mp-logo.webp"
 import CheckIcon from "/assets/img/icons/check-icon.png"
 import ShieldIcon from "/assets/img/icons/shield-icon.png"
 import DeliveryIcon from "/assets/img/icons/delivery-icon.png"
-import { products } from "../data/Products"
-import { useParams } from "react-router-dom"
-import RecommendedProducts from "../components/RecommendedProducts"
-import { MyContext } from "../context/Context"
-import AddModal from "../components/AddModal"
 
 export const ProductPageCont = styled.div`
   display: flex;

@@ -1,10 +1,18 @@
 import React, { useContext, useState } from 'react'
+
+// useContext
+import { MyContext } from "../context/Context"
+
+// Styled Components
 import styled from "styled-components"
 import { SectionCont, Title } from "./News"
+
+// Components
 import Category from "./Category"
 import Products from "./Products"
+
+// Data
 import { categories } from "../data/Categories"
-import { MyContext } from "../context/Context"
 
 const CategoriesCont = styled.section`
   display: flex;

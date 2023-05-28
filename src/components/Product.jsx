@@ -1,8 +1,16 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
+
+// useContext
+import { MyContext } from "../context/Context"
+
+// Styled Components
 import styled from "styled-components"
 import { MainButton } from "./Build"
+
+// React Router
 import { Link } from "react-router-dom"
-import { MyContext } from "../context/Context"
+
+// Components
 import AddModal from "./AddModal"
 
 const ProductCont = styled.div`

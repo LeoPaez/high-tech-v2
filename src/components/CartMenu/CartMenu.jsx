@@ -1,12 +1,21 @@
-import React, { useEffect } from 'react';
-import styled from 'styled-components';
-import CartIcon from "/assets/img/icons/cart.png"
-import CartProduct from "./CartProduct";
-import { Cart, CartCount, LinkButton, NavIcon } from "../Nav";
+import React, { useEffect, useContext } from 'react';
+
+// useContext
 import { MyContext } from "../../context/Context";
-import { useContext } from "react";
+
+// Styled Components
+import styled from 'styled-components';
+import { Cart, CartCount, LinkButton, NavIcon } from "../Nav";
+
+// SweetAlert2
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+
+// Components
+import CartProduct from "./CartProduct";
+
+// Images
+import CartIcon from "/assets/img/icons/cart.png"
 
 const CartMenuCont = styled.div`
   list-style: none;

@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { products } from "../data/Products"
-import { Title } from "./News"
-import Product from "./Product"
+
+// Styled Components
 import styled from "styled-components"
+import { Title } from "./News"
+
+// Components
+import Product from "./Product"
+
+// Data
+import { products } from "../data/Products"
 
 const RelatedProducts = styled.div`
   display: flex;

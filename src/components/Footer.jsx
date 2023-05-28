@@ -1,5 +1,9 @@
 import React from 'react'
+
+// Styled Components
 import styled from "styled-components"
+
+// Images
 import SendIcon from "/assets/img/social/send.png"
 import Instagram from "/assets/img/social/instagram.png"
 import Twitter from "/assets/img/social/twitter.png"
@@ -12,7 +16,6 @@ const FooterCont = styled.footer`
   flex-direction: column;
   color: #FFF;
   background-color: #242423;
-
 `
 const FooterRow = styled.div`
   display: flex;

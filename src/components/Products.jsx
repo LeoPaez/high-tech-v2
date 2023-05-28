@@ -1,9 +1,13 @@
-import React from 'react'
-import styled from "styled-components"
-import Product from "./Product"
-import { useContext } from "react"
+import React, { useContext } from 'react'
+
+// useContext
 import { MyContext } from "../context/Context"
-import Category from "./Category"
+
+// Styled Components
+import styled from "styled-components"
+
+// Components
+import Product from "./Product"
 
 const ProductsCont = styled.div`
   display: flex;

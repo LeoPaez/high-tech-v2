@@ -1,6 +1,12 @@
 import React from 'react'
+
+// Styled
 import styled from "styled-components"
+
+// Components
 import Product from "./Product"
+
+// Data
 import { products } from "../data/Products"
 
 export const SectionCont = styled.section`

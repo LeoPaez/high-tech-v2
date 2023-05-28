@@ -1,5 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
+
+// Styled Components
 import styled from "styled-components"
+
+// Components
 import Banner from "../components/Banner"
 import Carousel from "../components/Carousel"
 import Builds from "../components/Builds"

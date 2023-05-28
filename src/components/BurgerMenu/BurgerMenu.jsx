@@ -1,8 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
-import styled from 'styled-components';
-import Menu from './Menu';
-import { useContext } from "react";
+import React, { useEffect, useRef, useContext } from 'react';
+
+// useContext
 import { MyContext } from "../../context/Context";
+
+// Styled Components
+import styled from 'styled-components';
+
+// Components
+import Menu from './Menu';
 
 const StyledBurger = styled.div`
   display: none;

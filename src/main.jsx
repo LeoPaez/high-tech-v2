@@ -1,10 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+
+// App.jsx
 import App from './App'
-import './index.css'
-import ScrollToTop from "./helpers/ScrollToTop"
-import { BrowserRouter } from "react-router-dom"
+
+// useContext
 import { ContextProvider } from "./context/Context"
+
+// React Router
+import { BrowserRouter } from "react-router-dom"
+
+// Helpers
+import ScrollToTop from "./helpers/ScrollToTop"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>

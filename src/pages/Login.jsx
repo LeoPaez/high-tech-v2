@@ -1,5 +1,9 @@
-import React, { useRef } from 'react'
+import React from 'react'
+
+// Styled Components
 import styled from "styled-components"
+
+// React Router
 import { Link } from "react-router-dom"
 
 export const AccessCont = styled.div`
@@ -74,8 +78,6 @@ export const AccessLink = styled(Link)`
     text-decoration: underline;
   }
 `
-
-
 
 const Login = () => {
   return (

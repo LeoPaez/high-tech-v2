@@ -1,7 +1,15 @@
 import React, { useContext, useRef } from 'react'
-import styled from "styled-components"
-import { Link } from "react-router-dom"
+
+// useContext
 import { MyContext } from "../../context/Context"
+
+// Styled Components 
+import styled from "styled-components"
+
+// React Router
+import { Link } from "react-router-dom"
+
+// SweetAlert2
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 

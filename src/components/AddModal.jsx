@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react'
+
+// Styled Components
 import styled from "styled-components";
 
 const Modal = styled.div`

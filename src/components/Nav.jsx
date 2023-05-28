@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
+
+// Styled Components
 import styled from "styled-components"
-import BlackLogo from "/assets/img/logos/hightech-logo-black.png"
-import UserIcon from "/assets/img/icons/user.png"
 import { MainButton } from "./Build"
 import { Link } from "react-router-dom"
+
+// Components
 import BurgerMenu from "./BurgerMenu/BurgerMenu"
 import CartMenu from "./CartMenu/CartMenu"
+
+// Images
+import BlackLogo from "/assets/img/logos/hightech-logo-black.png"
+import UserIcon from "/assets/img/icons/user.png"
 
 const NavBar = styled.nav`
   display: flex;
@@ -17,7 +23,6 @@ const NavBar = styled.nav`
   padding: 0 280px;
   transition: all 0.3s ease 0s;
   border-bottom: ${props => props.isScrolled ? "2px solid #ced4da" : "none"};
-  /* border-bottom: 2px solid #ced4da; */
 `
 const Logo = styled.img`
   width: 140px;

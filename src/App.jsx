@@ -1,19 +1,28 @@
-import './App.css'
 import { Suspense, lazy } from "react";
+
+// Global Styles
+import './App.css'
+
+// Styled Components
+import { Wrapper, Fixed } from "./pages/Home";
+
+// React Router
 import { Routes, Route, } from "react-router-dom"; 
+
+// Components
 import Nav from "./components/Nav";
+import Home from "./pages/Home";
 import Slider from "./components/Slider";
 import Footer from "./components/Footer";
-import { Wrapper, Fixed } from "./pages/Home";
-import Home from "./pages/Home";
-import NotFoundPage from "./pages/NotFoundPage";
-import SuccessPage from "./pages/SuccessPage";
-const ProductPage = lazy(() => import("./pages/ProductPage"));
-const BuildPage = lazy(() => import("./pages/BuildPage"));
-const CheckoutPage = lazy(() => import("./pages/CheckoutPage"));
+
+// Pages
 const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
-
+const BuildPage = lazy(() => import("./pages/BuildPage"));
+const ProductPage = lazy(() => import("./pages/ProductPage"));
+const CheckoutPage = lazy(() => import("./pages/CheckoutPage"));
+const SuccessPage = lazy(() => import("./pages/SuccessPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 function App() {
   return (

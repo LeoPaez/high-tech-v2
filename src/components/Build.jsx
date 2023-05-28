@@ -1,10 +1,16 @@
 import React from 'react'
+
+// Styled Components
 import styled from "styled-components"
+
+// React Router
+import { Link } from "react-router-dom"
+
+// Images
 import CpuIcon from "/assets/img/icons/cpu-icon.png"
 import GpuIcon from "/assets/img/icons/gpu-icon.png"
 import RamIcon from "/assets/img/icons/ram-icon.png"
 import CoolingIcon from "/assets/img/icons/cooling-icon.png"
-import { Link } from "react-router-dom"
 
 const BuildCard = styled.div`
   background-color: #292929;

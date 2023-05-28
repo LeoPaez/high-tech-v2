@@ -1,9 +1,15 @@
 import React, { useContext } from 'react'
+
+// useContext
+import { MyContext } from "../context/Context"
+
+// Styled Components
 import styled from "styled-components"
-import CheckIcon from "/assets/img/icons/check.png"
 import { LinkButton } from "../components/Nav"
 import { MainButton } from "../components/Build"
-import { MyContext } from "../context/Context"
+
+// Images
+import CheckIcon from "/assets/img/icons/check.png"
 
 const SuccessCont = styled.div`
   display: flex;

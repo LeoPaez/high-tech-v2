@@ -1,6 +1,12 @@
 import React from 'react'
+
+// Styled Components
 import styled from "styled-components"
+
+// Components
 import Build from "./Build"
+
+// Data
 import { builds } from "../data/Builds"
 
 const BuildsCont = styled.section`

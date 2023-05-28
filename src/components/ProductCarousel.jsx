@@ -1,18 +1,19 @@
-import React, { useRef, useState } from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
+
+// Styled Components
 import { ProductImage } from "../pages/ProductPage";
 
-// Import Swiper React components
+// Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
+// Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "../styles/slider.css"
 
-// import required modules
+// Swiper required modules
 import { FreeMode, Navigation, Thumbs } from "swiper";
 
 function ProductCarousel({ imgProduct, imgCpu, imgGpu, imgRam }) {

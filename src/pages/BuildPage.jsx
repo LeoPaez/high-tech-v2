@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
+
+// useContext
+import { MyContext } from "../context/Context"
+
+// Styled Components
 import styled from "styled-components"
 import { MainButton } from "../components/Build"
-import MercadoPagoLogo from "/assets/img/logos/mp-logo.webp"
-import CheckIcon from "/assets/img/icons/check-icon.png"
-import ShieldIcon from "/assets/img/icons/shield-icon.png"
-import DeliveryIcon from "/assets/img/icons/delivery-icon.png"
 import { 
   ProductPageCont,
   ProductCont,
@@ -24,12 +25,23 @@ import {
   ProductDetail,
   ProductDetailIcon,
 } from "../pages/ProductPage"
-import ProductCarousel from "../components/ProductCarousel"
-import { builds } from "../data/Builds"
+
+// React Router
 import { useParams } from "react-router-dom"
-import RecommendedProducts from "../components/RecommendedProducts"
-import { MyContext } from "../context/Context"
+
+// Data
+import { builds } from "../data/Builds"
+
+// Components
+import ProductCarousel from "../components/ProductCarousel"
 import AddModal from "../components/AddModal"
+import RecommendedProducts from "../components/RecommendedProducts"
+
+// Images
+import MercadoPagoLogo from "/assets/img/logos/mp-logo.webp"
+import CheckIcon from "/assets/img/icons/check-icon.png"
+import ShieldIcon from "/assets/img/icons/shield-icon.png"
+import DeliveryIcon from "/assets/img/icons/delivery-icon.png"
 
 const BuildComponents = styled.form`
   display: flex;
