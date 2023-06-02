@@ -13,6 +13,12 @@ const BannerCont = styled.div`
 const BannerText = styled.p`
   color: #FFF;
   font-size: 22px;
+  @media (max-width: 500px){
+    font-size: 18px;
+  }
+  @media (max-width: 500px){
+    font-size: 16px;
+  }
 `
 const BannerTextSpan = styled.span`
   font-weight: 700;

@@ -23,10 +23,31 @@ const NavBar = styled.nav`
   padding: 0 280px;
   transition: all 0.3s ease 0s;
   border-bottom: ${props => props.isScrolled ? "2px solid #ced4da" : "none"};
+  @media (max-width: 1800px){
+    padding: 0px 180px;
+  }
+  @media (max-width: 1600px){
+    padding: 0px 120px;
+  }
+  @media (max-width: 1500px){
+    padding: 0px 80px;
+  }
+  @media (max-width: 1300px){
+    padding: 0px 60px;
+  }
+  @media (max-width: 1000px){
+    padding: 0px 40px;
+  }
+  @media (max-width: 800px){
+    padding: 0px 20px;
+  }
 `
 const Logo = styled.img`
   width: 140px;
   opacity: 0.9;
+  @media (max-width: 800px){
+    width: 120px;
+  }
 `
 const NavItems = styled.div`
   display: flex;
@@ -37,6 +58,9 @@ const NavItems = styled.div`
 const NavLinks = styled.div`
   display: flex;
   gap: 20px;
+  @media (max-width: 1300px){
+    display: none;
+  }
 `
 const NavLink = styled.a`
   color: #0e1111;
@@ -53,6 +77,9 @@ const Bar = styled.div`
   height: 26px;
   border: 1px solid #0e1111;
   opacity: 0.4;
+  @media (max-width: 1300px){
+    display: none;
+  }
 `
 const UserActions = styled.div`
   display: flex;
@@ -63,6 +90,9 @@ const User = styled.div`
   display: flex;
   align-items: center;
   gap: 4px;
+  @media (max-width: 1300px){
+    display: none;
+  }
 `
 export const NavIcon = styled.img`
   width: 28px;
@@ -108,10 +138,10 @@ const Nav = () => {
         </Link>
         <NavItems>
           <NavLinks>
-            <NavLink href="#">Inicio</NavLink>
-            <NavLink href="#">Armados</NavLink>
-            <NavLink href="#">Productos</NavLink>
-            <NavLink href="#">Contacto</NavLink>
+            <NavLink href="/">Inicio</NavLink>
+            <NavLink href="#builds">Armados</NavLink>
+            <NavLink href="#products">Productos</NavLink>
+            <NavLink href="#contact">Contacto</NavLink>
           </NavLinks>
           <Bar />
           <UserActions>

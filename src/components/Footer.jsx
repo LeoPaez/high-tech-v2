@@ -20,7 +20,7 @@ const FooterCont = styled.footer`
 const FooterRow = styled.div`
   display: flex;
   gap: 120px;
-  padding: 60px 300px;
+  padding: 60px 280px;
   font-size: 16px;
   color: #dee2e6;
   :last-of-type {
@@ -29,12 +29,87 @@ const FooterRow = styled.div`
     padding-block: 30px;
     gap: 80px;
   }
+  @media (max-width: 1800px){
+    padding: 60px 180px;
+  }
+  @media (max-width: 1600px){
+    padding: 60px 120px;
+    gap: 100px;
+  }
+  @media (max-width: 1500px){
+    padding: 60px 80px;
+    gap: 80px;
+  }
+  @media (max-width: 1300px){
+    padding: 60px 60px;
+    gap: 60px;
+    :last-of-type {
+      gap: 40px;
+    }
+  }
+  @media (max-width: 1200px){
+    gap: 40px;
+  }
+  @media (max-width: 1100px){
+    :first-of-type {
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+    }
+  }
+  @media (max-width: 1000px){
+    padding: 60px 40px;
+  }
+  @media (max-width: 800px){
+    padding: 60px 20px;
+    :last-of-type {
+      gap: 30px;
+    }
+  }
+  @media (max-width: 700px){
+    :last-of-type {
+      gap: 20px;
+    }
+  }
+  @media (max-width: 600px){
+    :last-of-type {
+      flex-direction: column;
+    }
+  }
+`
+const FooterColumns = styled.div`
+  display: flex;
+  gap: 120px;
+  @media (max-width: 1600px){
+    gap: 100px;
+  }
+  @media (max-width: 1500px){
+    gap: 80px;
+  }
+  @media (max-width: 1300px){
+    gap: 60px;
+  }
+  @media (max-width: 1200px){
+    gap: 40px;
+  }
+  @media (max-width: 1100px){
+    gap: 80px;
+  }
+  @media (max-width: 800px){
+    gap: 40px;
+  }
+  @media (max-width: 700px){
+    flex-direction: column;
+  }
 `
 const FooterColumn = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
   color: #dee2e6;
+  @media (max-width: 1100px){
+    align-items: center;
+  }
 `
 const FootTitle = styled.h4`
   font-size: 17px;
@@ -111,6 +186,9 @@ const Line = styled.div`
   height: 3px;
   background-color: #ced4da;
   border-radius: 2px;
+  @media (max-width: 600px){
+    display: none;
+  }
 `
 const Rights = styled.p`
   white-space: nowrap;
@@ -119,28 +197,30 @@ const Rights = styled.p`
 const Footer = () => {
   return (
     <>
-      <FooterCont>
+      <FooterCont id="contact">
         <FooterRow>
-          <FooterColumn>
-            <FootTitle>Quiénes somos</FootTitle>
-            <FootLink>Sobre nosotros</FootLink>
-            <FootLink>Seguimiento de envíos</FootLink>
-            <FootLink>Preguntas frecuentes</FootLink>
-            <FootLink>Soporte</FootLink>
-          </FooterColumn>
-          <FooterColumn>
-            <FootTitle>Recursos</FootTitle>
-            <FootLink>Términos de uso</FootLink>
-            <FootLink>Políticas de privacidad</FootLink>
-            <FootLink>Garantías</FootLink>
-            <FootLink>Devoluciones</FootLink>
-          </FooterColumn>
-          <FooterColumn>
-            <FootTitle>Atención al cliente</FootTitle>
-            <FootText>consultas@hightech.com.ar</FootText>
-            <FootText>1111-222-3333</FootText>
-            <FootText>WhatsApp: +54 9 223-111-2222</FootText>
-          </FooterColumn>
+          <FooterColumns>
+            <FooterColumn>
+              <FootTitle>Quiénes somos</FootTitle>
+              <FootLink>Sobre nosotros</FootLink>
+              <FootLink>Seguimiento de envíos</FootLink>
+              <FootLink>Preguntas frecuentes</FootLink>
+              <FootLink>Soporte</FootLink>
+            </FooterColumn>
+            <FooterColumn>
+              <FootTitle>Recursos</FootTitle>
+              <FootLink>Términos de uso</FootLink>
+              <FootLink>Políticas de privacidad</FootLink>
+              <FootLink>Garantías</FootLink>
+              <FootLink>Devoluciones</FootLink>
+            </FooterColumn>
+            <FooterColumn>
+              <FootTitle>Atención al cliente</FootTitle>
+              <FootText>consultas@hightech.com.ar</FootText>
+              <FootText>1111-222-3333</FootText>
+              <FootText>WhatsApp: +54 9 223-111-2222</FootText>
+            </FooterColumn>
+          </FooterColumns>
           <FooterColumn>
             <Logo src={WhiteLogo} />
             <FootTitle>Suscribite y recibí las mejores promos</FootTitle>

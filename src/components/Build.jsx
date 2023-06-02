@@ -19,12 +19,19 @@ const BuildCard = styled.div`
   border-radius: 16px;
   position: relative;
   color: #FFF;
+  @media (max-width: 1300px){
+    width: 260px;
+  }
 `
 const CardImg = styled.img`
   width: 300px;
   height: 190px;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 60%);
   mask-image: linear-gradient(to top, transparent 0%, black 60%);
+  @media (max-width: 1300px){
+    width: 260px;
+    height: 170px;
+  }
 `
 const CardInfo = styled.div`
   display: flex;
@@ -40,15 +47,24 @@ const CardName = styled.p`
   font-size: 36px;
   font-style: italic;
   text-transform: uppercase;
-
+  @media (max-width: 1300px){
+    font-size: 30px;
+  }
 `
 const CardPriceText = styled.p`
   margin-bottom: -10px;
   font-size: 15px;
+  @media (max-width: 1300px){
+    font-size: 14px;
+    margin-top: 8px;
+  }
 `
 const CardPrice = styled.p`
   font-size: 28px;
   font-weight: 600;
+  @media (max-width: 1300px){
+    font-size: 24px;
+  }
 `
 export const MainButton = styled.button`
   align-self: flex-start;
@@ -77,6 +93,9 @@ const CardSpecIcon = styled.img`
   width: 22px;
 `
 const CardSpecText = styled.div`
+  @media (max-width: 1300px){
+    font-size: 14px;
+  }
 `
 
 const Build = ({ id, src, title, price, cpu, gpu, ram, cooling }) => {

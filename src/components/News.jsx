@@ -28,9 +28,20 @@ export const Title = styled.h3`
 `
 const NewsProducts = styled.div`
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  width: 94%;
+  /* justify-content: center; */
+  /* flex-wrap: wrap; */
   gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  &::-webkit-scrollbar {
+    height: 8px;
+    background-color: #ced4da;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #adb5bd;
+    border-radius: 5px;
+  }
 `
 
 const News = () => {

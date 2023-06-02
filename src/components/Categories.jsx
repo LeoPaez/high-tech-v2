@@ -18,7 +18,22 @@ const CategoriesCont = styled.section`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
+  @media (max-width: 1500px){
+    gap: 8px;
+  }
+  @media (max-width: 1400px){
+    width: 700px;
+    gap: 8px;
+  }
+  @media (max-width: 650px){
+    width: 500px;
+    gap: 8px;
+  }
+  @media (max-width: 500px){
+    width: 400px;
+    gap: 8px;
+  }
 `
 
 const Categories = () => {
@@ -30,7 +45,7 @@ const Categories = () => {
 
   return (
     <>
-      <SectionCont>
+      <SectionCont id="products">
         <Title>Categorias</Title>
         <CategoriesCont>
           {categories.map((categoria) => (

@@ -8,7 +8,7 @@ const CategoryCont = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 30px 10px;
+  padding: 24px 6px;
   border: 2px solid ${({ selected }) => selected ? "#495057" : "#adb5bd"};
   border-radius: 4px;
   gap: 16px;
@@ -18,10 +18,16 @@ const CategoryCont = styled.div`
   :hover {
     border: 2px solid ${({ selected }) => selected ? "#495057" : "#6c757d"};
   }
+  @media (max-width: 700px){
+    padding: 20px 4px;
+  }
 `;
 
 const CatIcon = styled.img`
   width: 60px;
+  @media (max-width: 700px){
+    width: 56px;
+  }
 `;
 
 const CatName = styled.p`

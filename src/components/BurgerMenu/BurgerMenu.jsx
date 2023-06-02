@@ -27,7 +27,7 @@ const StyledBurger = styled.div`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: #0D0C1D;
+    background: #111111;
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
@@ -46,7 +46,7 @@ const StyledBurger = styled.div`
       transform: ${({ open }) => open ? 'rotate(-47deg)' : 'rotate(0)'};
     }
   }
-  @media (max-width: 900px){
+  @media (max-width: 1300px){
     display: flex;
   }
 `;

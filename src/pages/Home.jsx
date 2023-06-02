@@ -15,6 +15,24 @@ export const Wrapper = styled.div`
   :first-of-type {
     height: 90px;
   }
+  @media (max-width: 1800px){
+    padding: 0px 180px;
+  }
+  @media (max-width: 1600px){
+    padding: 0px 120px;
+  }
+  @media (max-width: 1500px){
+    padding: 0px 80px;
+  }
+  @media (max-width: 1300px){
+    padding: 0px 60px;
+  }
+  @media (max-width: 1000px){
+    padding: 0px 40px;
+  }
+  @media (max-width: 800px){
+    padding: 0px 20px;
+  }
 `
 export const Fixed = styled.div`
   position: fixed;
