@@ -13,7 +13,7 @@ export const SectionCont = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+  gap: 40px;
   margin-bottom: ${props => props.marginBottom || "0"};
 `
 export const Title = styled.h3`
@@ -26,11 +26,9 @@ export const Title = styled.h3`
   width: 100%;
   text-transform: uppercase;
 `
-const NewsProducts = styled.div`
+export const NewsProducts = styled.div`
   display: flex;
   width: 94%;
-  /* justify-content: center; */
-  /* flex-wrap: wrap; */
   gap: 20px;
   overflow-x: auto;
   padding-bottom: 10px;

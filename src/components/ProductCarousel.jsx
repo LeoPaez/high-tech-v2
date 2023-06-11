@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 // Styled Components
+import styled from "styled-components";
 import { ProductImage } from "../pages/ProductPage";
 
 // Swiper React components
@@ -16,11 +17,24 @@ import "../styles/slider.css"
 // Swiper required modules
 import { FreeMode, Navigation, Thumbs } from "swiper";
 
+const ProductCarouselImg = styled.img`
+  width: 86px;
+  @media (max-width: 600px){
+    width: 80px;
+  }
+  @media (max-width: 500px){
+    width: 70px;
+  }
+  @media (max-width: 400px){
+    width: 60px;
+  }
+`
+
 function ProductCarousel({ imgProduct, imgCpu, imgGpu, imgRam }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <>
+    <div className="c2">
       <Swiper
         spaceBetween={10}
         navigation={true}
@@ -52,19 +66,19 @@ function ProductCarousel({ imgProduct, imgCpu, imgGpu, imgRam }) {
         className="mySwiper"
       >
         <SwiperSlide>
-          <ProductImage size="100px" src={imgProduct} />
+          <ProductCarouselImg src={imgProduct} />
         </SwiperSlide>
         <SwiperSlide>
-          <ProductImage size="100px" src={imgCpu} />
+          <ProductCarouselImg src={imgCpu} />
         </SwiperSlide>
         <SwiperSlide>
-          <ProductImage size="100px" src={imgGpu} />
+          <ProductCarouselImg src={imgGpu} />
         </SwiperSlide>
         <SwiperSlide>
-          <ProductImage size="100px" src={imgRam} />
+          <ProductCarouselImg src={imgRam} />
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 }
 

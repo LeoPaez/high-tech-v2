@@ -13,13 +13,24 @@ import { products } from "../data/Products"
 const RelatedProducts = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 1000px;
+  align-items: center;
+  gap: 40px;
+  margin-top: 80px;
 `
 const Products = styled.div`
   display: flex;
-  gap: 8px;
-  justify-content: center;
+  width: 75%;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  &::-webkit-scrollbar {
+    height: 8px;
+    background-color: #ced4da;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #adb5bd;
+    border-radius: 5px;
+  }
 `
 
 const RecommendedProducts = () => {
