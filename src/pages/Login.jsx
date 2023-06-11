@@ -11,6 +11,7 @@ export const AccessCont = styled.div`
   justify-content: center;
   align-items: center;
   margin: 40px 0 80px;
+  padding: 0 20px;
 `
 export const Access = styled.div`
   width: 300px;

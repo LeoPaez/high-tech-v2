@@ -45,7 +45,7 @@ const Register = () => {
               <AccessLabel htmlFor="contraseña">Confirma tu contraseña</AccessLabel>
               <AccessInput
                 type="text"
-                placeholder="Escribe tu contraseña de nuevo"
+                placeholder="Escribe tu contraseña"
                 id="contraseña"
                 autoComplete="on"
                 required
