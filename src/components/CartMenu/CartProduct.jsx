@@ -27,6 +27,9 @@ const ProductCont = styled.div`
     display: flex;
     gap: 12px;
   }
+  @media (max-width: 400px){
+    width: 300px;
+  }
 `
 const ProductLink = styled(Link)`
   color: #0e1111;

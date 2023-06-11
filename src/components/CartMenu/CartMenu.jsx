@@ -29,13 +29,21 @@ const CartMenuCont = styled.div`
   transform: ${({ open }) => open ? 'translateX(0%)' : 'translateX(100%)'};
   top: 90px;
   right: 0;
-  height: 100%;
-  width: 400px;
+  /* height: 100%; */
+  height: calc(100vh - 90px);
+  width: 460px;
   transition: transform 0.3s ease-in-out;
   margin: 0 auto;
   color: #343a40;
-  padding: 90px 30px;
+  padding: 70px 30px 40px;
   border-left: 2px solid #dee2e6;
+  align-content: space-between;
+  justify-content: space-between;
+  box-sizing: border-box;
+  @media (max-width: 500px){
+    width: 100%;
+    padding-inline: 10px;
+  }
 `
 const CloseIcon = styled.p`
   position: absolute;
@@ -55,16 +63,27 @@ const MenuInfo = styled.div`
 export const MenuItems = styled.div`
   display: flex;
   flex-direction: column;
-  height: 460px;
+  height: 50vh;
   overflow-y: scroll;
   gap: 20px;
   padding-right: 10px;
   &::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
+    background-color: #ced4da;
   }
   &::-webkit-scrollbar-thumb {
     background-color: #adb5bd;
     border-radius: 5px;
+  }
+  @media (max-height: 900px){
+    height: 45vh;
+  }
+  @media (max-height: 800px){
+    height: 38vh;
+  }
+  @media (max-height: 700px){
+    height: 30vh;
   }
 `
 const EmptyCartMsg = styled.p`
@@ -76,6 +95,9 @@ const MenuActions = styled.div`
   flex-direction: column;
   gap: 30px;
   font-size: 18px;
+  @media (max-height: 1000px){
+    gap: 20px;
+  }
 `
 const Bar = styled.div`
   border-top: 3px solid #ced4da;
