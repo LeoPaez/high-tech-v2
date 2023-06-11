@@ -64,7 +64,7 @@ export const MenuItems = styled.div`
   display: flex;
   flex-direction: column;
   height: 50vh;
-  overflow-y: scroll;
+  overflow: scroll;
   gap: 20px;
   padding-right: 10px;
   &::-webkit-scrollbar {
@@ -86,6 +86,7 @@ export const MenuItems = styled.div`
     height: 30vh;
   }
 `
+
 const EmptyCartMsg = styled.p`
   font-size: 18px;
   margin: auto;

@@ -153,7 +153,6 @@ const CartProduct = ({ id, img, title, price, category }) => {
     } else {
       return "pc-armada";
     }
-    console.log(category);
   };
 
   const productLink = getProductLink();
