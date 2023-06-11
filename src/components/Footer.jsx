@@ -60,7 +60,7 @@ const FooterRow = styled.div`
   @media (max-width: 1000px){
     padding: 60px 40px;
   }
-  @media (max-width: 800px){
+  @media (max-width: 900px){
     padding: 60px 20px;
     :last-of-type {
       gap: 30px;
@@ -93,13 +93,20 @@ const FooterColumns = styled.div`
     gap: 40px;
   }
   @media (max-width: 1100px){
-    gap: 80px;
+    gap: 40px;
+    div {
+    width: 230px;
+    }
+  }
+  @media (max-width: 1000px){
+    gap: 20px;
+  }
+  @media (max-width: 900px){
+    gap: 10px;
   }
   @media (max-width: 800px){
-    gap: 40px;
-  }
-  @media (max-width: 700px){
     flex-direction: column;
+    gap: 50px;
   }
 `
 const FooterColumn = styled.div`
