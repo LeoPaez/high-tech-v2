@@ -23,6 +23,9 @@ export const Access = styled.div`
   padding: 20px 40px 30px;
   gap: 20px;
   border-radius: 8px;
+  @media (max-width: 400px){
+    padding-inline: 20px;
+  }
 `
 export const AccessTitle = styled.h2`
   text-align: center;
