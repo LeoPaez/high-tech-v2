@@ -12,21 +12,41 @@ const ErrorCont = styled.div`
   justify-content: center;
   gap: 20px;
   height: 60vh;
+  padding: 0 20px;
+  text-align: center;
   span {
     color: #ff4800;
   }
 `
 const ErrorTitle = styled.h2`
   font-size: 36px;
+  @media (max-width: 1200px){
+    font-size: 32px;
+  }
+  @media (max-width: 800px){
+    font-size: 30px;
+  }
+  @media (max-width: 500px){
+    font-size: 26px;
+  }
 `
 const ErrorSubtitle = styled.h3`
   font-size: 24px;
+  @media (max-width: 1200px){
+    font-size: 22px;
+  }
+  @media (max-width: 800px){
+    font-size: 20px;
+  }
 `
 const ErrorText = styled.p`
   font-size: 20px;
   max-width: 460px;
   text-align: center;
   margin-bottom: 20px;
+  @media (max-width: 800px){
+    font-size: 18px;
+  }
 `
 
 const NotFoundPage = () => {
