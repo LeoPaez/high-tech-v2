@@ -18,6 +18,8 @@ const SuccessCont = styled.div`
   flex-direction: column;
   height: 60vh;
   gap: 20px;
+  padding: 0 20px;
+  text-align: center;
   span {
     color: #ff4800;
   }
@@ -25,10 +27,19 @@ const SuccessCont = styled.div`
 const SuccessIcon = styled.img`
   width: 100px;
   margin-bottom: 10px;
+  @media (max-width: 1200px){
+    width: 90px;
+  }
+  @media (max-width: 800px){
+    width: 80px;
+  }
 `
 
 const SuccessTitle = styled.h2`
   font-size: 26px;
+  @media (max-width: 800px){
+    font-size: 24px;
+  }
 `
 
 const SuccessText = styled.p`
@@ -41,6 +52,16 @@ const SuccessText = styled.p`
   }
   :last-of-type {
     margin-bottom: 20px;
+  }
+  @media (max-width: 1200px){
+    width: 60%;
+  }
+  @media (max-width: 800px){
+    font-size: 18px;
+    width: 80%;
+  }
+  @media (max-width: 500px){
+    width: 100%;
   }
 `
 
