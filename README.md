@@ -14,6 +14,8 @@
 - Instala las dependencias: ```npm install```
 - Corre el ambiente local: ```npm run dev```
 
+[Link del proyecto en producción](https://high-tech-v2.vercel.app/)
+
 <p align="center">
   <img src="https://i.ibb.co/CVzg2qf/Captura.png" alt="Foto del proyecto">
 </p>
