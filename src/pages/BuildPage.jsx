@@ -61,7 +61,7 @@ const BuildComponentName = styled.label`
   font-weight: 700;
 ` 
 const BuildComponentSelect = styled.select`
-  padding: 2px 0px 2px 6px;
+  padding: 2px 0 2px 4px;
   background-color: #ced4da;
   border-radius: 4px;
   align-self: flex-start;
@@ -71,6 +71,9 @@ const BuildComponentSelect = styled.select`
   :focus {
     border: 1px solid #ff4800;
     outline: none;
+  }
+  @media (max-width: 600px){
+    width: 100%;
   }
 `
 const BuildComponentOption = styled.option`
