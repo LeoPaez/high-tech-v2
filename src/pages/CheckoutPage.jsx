@@ -36,6 +36,7 @@ const Checkout = styled.div`
   margin: 0 auto;
   @media (max-width: 1050px){
     flex-direction: column-reverse;
+    margin: 0;
   }
 `
 const CheckoutDetails = styled.div`
@@ -54,6 +55,7 @@ const CheckoutDetails = styled.div`
   @media (max-width: 1050px){
     width: auto;
     border-radius: 0 0 6px 6px;
+    margin: 0;
   }
   @media (max-width: 800px){
     height: auto;
@@ -203,7 +205,9 @@ const CheckoutOrder = styled.div`
     width: auto;
   }
   @media (max-width: 1050px){
+    height: auto;
     border-radius: 6px 6px 0 0;
+    margin: 0;
   }
 `
 
