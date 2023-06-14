@@ -4,7 +4,7 @@ import React, { useEffect, useContext } from 'react';
 import { MyContext } from "../../context/Context";
 
 // Styled Components
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Cart, CartCount, LinkButton, NavIcon } from "../Nav";
 
 // SweetAlert2
@@ -76,15 +76,17 @@ export const MenuItems = styled.div`
     background-color: #adb5bd;
     border-radius: 5px;
   }
-  @media (max-height: 900px){
-    height: 45vh;
-  }
-  @media (max-height: 800px){
-    height: 38vh;
-  }
-  @media (max-height: 700px){
-    height: 30vh;
-  }
+  ${props => props.isCartMenu && css`
+    @media (max-height: 900px){
+      height: 45vh;
+    }
+    @media (max-height: 800px){
+      height: 38vh;
+    }
+    @media (max-height: 700px){
+      height: 30vh;
+    }
+  `}
 `
 
 const EmptyCartMsg = styled.p`
@@ -162,7 +164,7 @@ const Menu = () => {
       <CloseIcon onClick={() => setOpenCart(!openCart)}>X</CloseIcon>
       <MenuInfo>
         <h3>Tus productos</h3>
-        <MenuItems>
+        <MenuItems isCartMenu>
           {
             cart.map((product) => 
               <CartProduct
