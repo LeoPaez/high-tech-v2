@@ -27,7 +27,7 @@ const ProductCont = styled.div`
     display: flex;
     gap: 12px;
   }
-  @media (max-width: 400px){
+  @media (max-width: 420px){
     width: 300px;
   }
 `
