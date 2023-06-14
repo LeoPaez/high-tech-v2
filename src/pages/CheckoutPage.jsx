@@ -22,9 +22,9 @@ import PaypalLogo from "/assets/img/logos/paypal-logo.png"
 
 const CheckoutCont = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   /* align-items: center; */
-  flex-direction: column;
   margin-top: 40px;
 `
 const CheckoutTitle = styled.h2`
@@ -33,6 +33,7 @@ const Checkout = styled.div`
   display: flex;
   border-radius: 10px;
   border: 2px solid #e9ecef;
+  margin: 0 auto;
   @media (max-width: 1050px){
     flex-direction: column-reverse;
   }
@@ -46,6 +47,7 @@ const CheckoutDetails = styled.div`
   width: 600px;
   height: 620px;
   border-radius: 6px 0 0 6px;
+  margin-left: auto;
   @media (max-width: 1200px){
     width: 500px;
   }
@@ -196,8 +198,11 @@ const CheckoutOrder = styled.div`
   background-color: #e9ecef;
   padding: 40px 20px;
   border-radius: 0 6px 6px 0;
-  @media (max-width: 1050px){
+  margin-right: auto;
+  @media (max-width: 1200px){
     width: auto;
+  }
+  @media (max-width: 1050px){
     border-radius: 6px 6px 0 0;
   }
 `
