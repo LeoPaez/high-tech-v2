@@ -29,7 +29,7 @@ const Banner = () => {
     <>
       <BannerCont>
         <BannerText>
-          Envio <BannerTextSpan>gratis</BannerTextSpan> a partir de los <BannerTextSpan>$30.000</BannerTextSpan> en <BannerTextSpan>24hs</BannerTextSpan>
+          Envio <BannerTextSpan>gratis</BannerTextSpan> a partir de los <BannerTextSpan>$50.000</BannerTextSpan> en <BannerTextSpan>24hs</BannerTextSpan>
         </BannerText>
       </BannerCont>
     </>
