@@ -81,13 +81,13 @@ const BuildComponentOption = styled.option`
 `
 
 const BuildPage = () => {
+  const { addToCart, modalOpen, addedToCart, setModalOpen, valorDolar } = useContext(MyContext)
+  
   const {buildTitle} = useParams()
   const build = builds.find(build => build.title === buildTitle)
-  const buildPrice = (build.price * 300).toLocaleString("us")
-  const buildPriceMP = ((build.price * 300) * 1.1).toLocaleString("us")
-  const buildInstallments = ((build.price * 300) / 12).toLocaleString("us")
-
-  const { addToCart, modalOpen, addedToCart, setModalOpen } = useContext(MyContext)
+  const buildPrice = (build.price * valorDolar).toLocaleString("us")
+  const buildPriceMP = ((build.price * valorDolar) * 1.1).toLocaleString("us")
+  const buildInstallments = ((build.price * valorDolar) / 12).toLocaleString("us")
 
   const handleClick = (e) => {
     e.preventDefault(),
@@ -185,9 +185,9 @@ const BuildPage = () => {
             </ProductInfo>
           </ProductCont>
         </ProductPageCont>
-        <Wrapper>
-          <RecommendedProducts />
-        </Wrapper>
+      </Wrapper>
+      <Wrapper>
+        <RecommendedProducts />
       </Wrapper>
     </>
   )

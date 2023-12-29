@@ -230,7 +230,7 @@ const CheckoutPrice = styled.p`
 `
 
 const CheckoutPage = () => {
-  const { cart, setCart, quantity, totalPrice, setUserEmail  } = useContext(MyContext)
+  const { cart, setCart, quantity, totalPrice, setUserEmail, valorDolar } = useContext(MyContext)
   const [formCompleted, setFormCompleted] = useState("")
   const [shipping, setShipping] = useState(0)
   const [mpFee, setMpFee] = useState(1)
@@ -244,8 +244,8 @@ const CheckoutPage = () => {
   }, []);
 
   useEffect(() => {
-    if(totalPrice <= 30000 / 300 && totalPrice > 0) {
-      setShipping(2000)
+    if(totalPrice <= 50000 / valorDolar && totalPrice > 0) {
+      setShipping(3000)
     } else {
       setShipping(0)
     }
@@ -413,15 +413,22 @@ const CheckoutPage = () => {
               </MenuItems>
               <CheckoutPrices>
                 <CheckoutPrice>Subtotal:</CheckoutPrice>
-                <CheckoutPrice>${(totalPrice * 300).toLocaleString("us")} ARS</CheckoutPrice>
+                <CheckoutPrice>${(totalPrice * valorDolar).toLocaleString("us")} ARS</CheckoutPrice>
               </CheckoutPrices>
+              {
+                mpFee > 1 &&
+                <CheckoutPrices>
+                  <CheckoutPrice>Tasa Mercado Pago:</CheckoutPrice>
+                  <CheckoutPrice>${(((totalPrice * valorDolar) * mpFee) - (totalPrice * valorDolar)).toLocaleString("us")} ARS</CheckoutPrice>
+                </CheckoutPrices>
+              }
               <CheckoutPrices>
                 <CheckoutPrice>Envió:</CheckoutPrice>
-                <CheckoutPrice>{shipping}$ ARS</CheckoutPrice>
+                <CheckoutPrice>${shipping.toLocaleString("de-DE")} ARS</CheckoutPrice>
               </CheckoutPrices>
               <CheckoutPrices>
                 <CheckoutPrice>Total:</CheckoutPrice>
-                <CheckoutPrice>${(((totalPrice * 300) + shipping) * mpFee).toLocaleString("us")} ARS</CheckoutPrice>
+                <CheckoutPrice>${(((totalPrice * valorDolar) + shipping) * mpFee).toLocaleString("us")} ARS</CheckoutPrice>
               </CheckoutPrices>
             </CheckoutOrder>
           </Checkout>

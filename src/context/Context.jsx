@@ -98,6 +98,19 @@ export const ContextProvider = ({ children }) => {
   //* Setear el email del usuario para usarlo globalmente
   const [userEmail, setUserEmail] = useState("")
 
+  //* Valor de venta del dolar blue
+  const [valorDolar, setValorDolar] = useState(null);
+
+  
+  useEffect(() => {
+    fetch("https://dolarapi.com/v1/dolares/blue") 
+    .then(res => res.json())
+    .then(data => {
+      setValorDolar(data.venta)
+    })
+    .catch(error => console.error(new Error(error)))
+  }, [])
+
   return (
     <MyContext.Provider
       value={{
@@ -119,7 +132,8 @@ export const ContextProvider = ({ children }) => {
         addedToCart,
         addToCart,
         userEmail,
-        setUserEmail
+        setUserEmail,
+        valorDolar
       }}
     >
       {children}

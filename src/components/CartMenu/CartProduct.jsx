@@ -77,7 +77,7 @@ const ProductQuantityNum = styled.p`
 `
 
 const CartProduct = ({ id, img, title, price, category }) => {
-  const {cart, setCart } = useContext(MyContext)
+  const {cart, setCart, valorDolar } = useContext(MyContext)
   const showConfirmationRef = useRef(false); // Usamos useRef en lugar de useState
 
   const addToCart = () => {
@@ -159,7 +159,7 @@ const CartProduct = ({ id, img, title, price, category }) => {
 
   const productQuantity = getQuantityById(id)
 
-  const productPrice = (price * 300).toLocaleString("us")
+  const productPrice = (price * valorDolar).toLocaleString("us")
 
   return (
     <>

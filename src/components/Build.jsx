@@ -1,5 +1,8 @@
 import React from 'react'
 
+// useContext
+import { MyContext } from "../context/Context"
+
 // Styled Components
 import styled from "styled-components"
 
@@ -11,6 +14,7 @@ import CpuIcon from "/assets/img/icons/cpu-icon.png"
 import GpuIcon from "/assets/img/icons/gpu-icon.png"
 import RamIcon from "/assets/img/icons/ram-icon.png"
 import CoolingIcon from "/assets/img/icons/cooling-icon.png"
+import { useContext } from "react"
 
 const BuildCard = styled.div`
   background-color: #292929;
@@ -99,7 +103,9 @@ const CardSpecText = styled.div`
 `
 
 const Build = ({ id, src, title, price, cpu, gpu, ram, cooling }) => {
-  const buildPrice = (price * 300).toLocaleString("us")
+  const { valorDolar } = useContext(MyContext)
+
+  const buildPrice = (price * valorDolar).toLocaleString("us")
 
   return (
     <>

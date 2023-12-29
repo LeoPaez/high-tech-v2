@@ -42,14 +42,14 @@ const ProductPrice = styled.p`
 `
 
 const Product = ({ id, img, title, price, category }) => {
-  const { addToCart, modalOpen, addedToCart, setModalOpen } = useContext(MyContext)
+  const { addToCart, modalOpen, addedToCart, setModalOpen, valorDolar } = useContext(MyContext)
 
   const handleClick = (e) => {
     e.preventDefault(),
     addToCart(id, img, title, price, category)
   }
 
-  const productPrice = (price * 300).toLocaleString("us")
+  const productPrice = (price * valorDolar).toLocaleString("us")
 
   return (
     <>

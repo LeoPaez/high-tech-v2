@@ -132,7 +132,7 @@ const MenuButton = styled.button`
 `
 
 const Menu = () => {
-  const { openCart, setOpenCart, cart, setCart, totalPrice } = useContext(MyContext)
+  const { openCart, setOpenCart, cart, setCart, totalPrice, valorDolar } = useContext(MyContext)
   
   const MySwal = withReactContent(Swal)
 
@@ -187,7 +187,7 @@ const Menu = () => {
         <Bar />
         <MenuTotal>
           <MenuTotalText>Total:</MenuTotalText>
-          <p>${(totalPrice * 300).toLocaleString("us")} ARS</p>
+          <p>${(totalPrice * valorDolar).toLocaleString("us")} ARS</p>
         </MenuTotal>
         <LinkButton to="/checkout" onClick={() => setOpenCart(!openCart)}>
           <MenuButton disabled={!cart.length ? true : false}>

@@ -70,7 +70,7 @@ export const ProductImgCont = styled.div`
   }
 `
 export const ProductImage = styled.img`
-  width: ${props => props.size || "420px"};
+  width: ${props => props.size || "420px"}; 
   border-radius: 2px;
   user-select: none;
   padding: 10px;
@@ -210,13 +210,13 @@ export const ProductDetailIcon = styled.img`
 `
 
 const ProductPage = () => {
+  const { addToCart, modalOpen, addedToCart, setModalOpen, valorDolar } = useContext(MyContext)
+
   const {productTitle} = useParams()
   const product = products.find(prod => prod.title === productTitle)
-  const productPrice = (product.price * 300).toLocaleString("us")
-  const productPriceMP = ((product.price * 300) * 1.1).toLocaleString("us")
-  const productInstallments = ((product.price * 300) / 12).toLocaleString("us")
-
-  const { addToCart, modalOpen, addedToCart, setModalOpen } = useContext(MyContext)
+  const productPrice = (product.price * valorDolar).toLocaleString("us")
+  const productPriceMP = ((product.price * valorDolar) * 1.1).toLocaleString("us")
+  const productInstallments = ((product.price * valorDolar) / 12).toLocaleString("us")
 
   const handleClick = (e) => {
     e.preventDefault(),
