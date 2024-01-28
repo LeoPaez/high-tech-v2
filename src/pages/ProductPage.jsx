@@ -23,6 +23,7 @@ import CheckIcon from "/assets/img/icons/check-icon.png"
 import ShieldIcon from "/assets/img/icons/shield-icon.png"
 import DeliveryIcon from "/assets/img/icons/delivery-icon.png"
 import { Wrapper } from "./Home"
+import Back from "../components/Back"
 
 export const ProductPageCont = styled.div`
   display: flex;
@@ -38,6 +39,7 @@ export const ProductCont = styled.div`
   border-radius: 6px;
   gap: 20px;
   border: 1px solid #ced4da;
+  position: relative;
   @media (max-width: 1200px){
     justify-content: center;
     gap: 0;
@@ -209,6 +211,12 @@ export const ProductDetailIcon = styled.img`
   width: 24px;
 `
 
+export const BackContainer = styled.div`
+  position: absolute;
+  left: 0;
+  padding: 6px 0px 0px 10px;
+`
+
 const ProductPage = () => {
   const { addToCart, modalOpen, addedToCart, setModalOpen, valorDolar } = useContext(MyContext)
 
@@ -228,6 +236,9 @@ const ProductPage = () => {
       <Wrapper>
         <ProductPageCont>
           <ProductCont>
+            <BackContainer>
+              <Back />
+            </BackContainer>
             <ProductImgCont>
               <ProductImage padWhite src={product.img} />
             </ProductImgCont>

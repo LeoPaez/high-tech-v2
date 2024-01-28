@@ -24,6 +24,7 @@ import {
   ProductDetails,
   ProductDetail,
   ProductDetailIcon,
+  BackContainer,
 } from "../pages/ProductPage"
 
 // React Router
@@ -43,6 +44,7 @@ import CheckIcon from "/assets/img/icons/check-icon.png"
 import ShieldIcon from "/assets/img/icons/shield-icon.png"
 import DeliveryIcon from "/assets/img/icons/delivery-icon.png"
 import { Wrapper } from "./Home"
+import Back from "../components/Back"
 
 const BuildComponents = styled.form`
   display: flex;
@@ -99,6 +101,9 @@ const BuildPage = () => {
       <Wrapper>
         <ProductPageCont>
           <ProductCont>
+            <BackContainer>
+              <Back />
+            </BackContainer>
             <ProductImgCont>
               <ProductCarousel
                 imgProduct={build.img}

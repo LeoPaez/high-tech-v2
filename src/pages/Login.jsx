@@ -6,16 +6,20 @@ import styled from "styled-components"
 // React Router
 import { Link } from "react-router-dom"
 
+// Components
+import Back from "../components/Back"
+
 export const AccessCont = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin: 40px 0 80px;
   padding: 0 20px;
 `
 export const Access = styled.div`
   width: 300px;
-  height: ${props => (props.login ? `440px` : `520px`)};;
+  height: ${props => (props.login ? `440px` : `520px`)};
   background-color: #343434;
   display: flex;
   flex-direction: column;
@@ -88,6 +92,7 @@ const Login = () => {
     <>
       <AccessCont>
       <Access login>
+        <Back whiteIcon />
         <AccessTitle>Iniciar sesión</AccessTitle>
         <AccessForm>
             <AccessLabel htmlFor="usuario">Usuario</AccessLabel>
