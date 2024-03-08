@@ -202,6 +202,8 @@ const Rights = styled.p`
 `
 
 const Footer = () => {
+  const year = new Date().getFullYear()
+
   return (
     <>
       <FooterCont id="contact">
@@ -241,7 +243,7 @@ const Footer = () => {
         </FooterRow>
         <FooterRow>
           <Line></Line>
-          <Rights>Copyright &copy; 2023 - HighTech</Rights>
+          <Rights>Copyright &copy; {year} - HighTech</Rights>
           <FootSocial>
             <SocialCont>
               <SocialIcon src={Instagram} />
