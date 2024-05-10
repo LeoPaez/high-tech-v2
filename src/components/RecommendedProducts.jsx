@@ -36,19 +36,28 @@ const Products = styled.div`
 const RecommendedProducts = () => {
   const [recommendedProducts, setRecommendedProducts] = useState([]);
 
+  const activeUrl = window.location.href
+
   useEffect(() => {
     const filterRecommendedProducts = () => {
-      const recommended = []
-      for (let i = 0; i < 4; i++) {
-        recommended.push(products[Math.floor(Math.random() * products.length)]);
+      const recommended = [];
+      const selectedIndices = new Set();
+    
+      while (recommended.length < 4) {
+        const randomIndex = Math.floor(Math.random() * products.length);
+    
+        if (!selectedIndices.has(randomIndex)) {
+          recommended.push(products[randomIndex]);
+          selectedIndices.add(randomIndex);
+        }
       }
-  
-      return recommended
+    
+      return recommended;
     }
     
     const recommended = filterRecommendedProducts();
     setRecommendedProducts(recommended);  
-  }, [])
+  }, [activeUrl])
 
   return (
     <>
