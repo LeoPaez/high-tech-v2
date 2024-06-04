@@ -17,5 +17,5 @@
 [Link del proyecto en producción](https://high-tech-v2.vercel.app/)
 
 <p align="center">
-  <img src="https://i.ibb.co/CVzg2qf/Captura.png" alt="Foto del proyecto">
+  <img src="https://i.ibb.co/GTkyz1X/High-Tech-Tienda-de-Hardware.png" alt="Foto del proyecto">
 </p>
